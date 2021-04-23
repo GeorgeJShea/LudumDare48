@@ -20,4 +20,4 @@ Ludum Dare 48 project, lets get a big team together
         a) check for updates in our repo -> "git pull"
         b) work
         c) update our repo with your stuff -> "git add ." + "git commit -m "comment"" + "git push"
-        d profit
+        d) profit
