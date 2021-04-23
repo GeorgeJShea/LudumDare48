@@ -6,7 +6,7 @@ Ludum Dare 48 project, lets get a big team together
 2. Wait for an invitation to become a contributor (ask for an invitation in discord)
 3. Make a new folder on your pc (where the project will be saved)
 4. Start the console from that folder (by typing cmd in the navbar) or navigate to that folder in the console
-5. Clone this repository by typing "git clone ~link~" where ~link~ is the adress you get when clicking the clone button
+5. Clone this repository by typing "git clone 'link'" where 'link' is the adress you get when clicking the clone button
 6. Configure git -> "git config --global user.name "Your Name"
                  -> "git config --global user.email "Your Email"
 
