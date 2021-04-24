@@ -77,6 +77,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -168,15 +169,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84ff2e82b13749f41af84849eaa350f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDelay: 1
-  reloadTime: 4
+  triggerDelay: 0.1
+  reloadTime: 0.1
   costToShoot: 1
-  clip: 2
-  clipSize: 2
-  ammoPool: 60
+  clip: 15
+  clipSize: 15
+  ammoPool: 120
   muzzleFlash: {fileID: 5398143623913548616, guid: 65eb1a67afacbc34bb4a35e3de1a95de, type: 3}
-  bullets: 6
-  deviation: 7
+  bullets: 1
+  deviation: 4
   lagTime: 0.1
   bullet: {fileID: 4996672021122051325, guid: 1118a6cfc4236f145b429c37f445e3d3, type: 3}
   gunNoise: {fileID: 0}

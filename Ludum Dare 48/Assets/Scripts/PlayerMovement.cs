@@ -5,11 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
+    private Vector2 moveVelocity;
 
-    float horizontal;
-    float vertical;
-
-    public float runSpeed = 20.0f;
+    public float speed = 20.0f;
 
     void Start()
     {
@@ -18,12 +16,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
-    }
+        Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
+        moveVelocity = moveInput.normalized * speed;
+    }
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
     }
 }
