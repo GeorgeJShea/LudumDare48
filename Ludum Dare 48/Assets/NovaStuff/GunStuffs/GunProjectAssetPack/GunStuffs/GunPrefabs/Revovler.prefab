@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 7912532995229287877}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.29, y: -2.06, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 6490068411268931674}
   m_Father: {fileID: 0}
@@ -191,6 +191,7 @@ MonoBehaviour:
   explosiveAffect: {fileID: 5398143623913548616, guid: 65eb1a67afacbc34bb4a35e3de1a95de, type: 3}
   explosiveDamage: 0
   explosiveRange: 0
+  flames: 0
   uiComponent: {fileID: 0}
 --- !u!114 &-2866761451970908432
 MonoBehaviour:

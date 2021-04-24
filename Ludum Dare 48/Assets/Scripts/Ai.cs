@@ -55,24 +55,28 @@ public class Ai : Character
             if (isPlayerClose)
             {
                 NavMeshPath path = new NavMeshPath();
-                Agent.CalculatePath(Player.instance.transform.position, path);
-                float pathLength = GetPathLength(path);
-                if (pathLength < playerRange)
+                if (NavMesh.SamplePosition(Player.instance.transform.position, out NavMeshHit hit, 15, NavMesh.AllAreas))
                 {
-                    if (pathLength < 1)
+                    Agent.CalculatePath(hit.position, path);
+                    float pathLength = GetPathLength(path);
+                    if (path.status != NavMeshPathStatus.PathInvalid && pathLength < playerRange)
                     {
-                        anim.Play("Attack");
-                        Agent.isStopped = true;
+                        if (pathLength < 1)
+                        {
+                            anim.Play("Attack");
+                            Agent.isStopped = true;
+                        }
+                        else
+                        {
+                            SetDestination(Player.instance.transform.position);
+                        }
                     }
                     else
                     {
-                        SetDestination(Player.instance.transform.position);
+                        playerRange = 6;
                     }
                 }
-                else
-                {
-                    isPlayerClose = false;
-                }
+
             }
             else
             {
@@ -118,6 +122,7 @@ public class Ai : Character
     {
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
+            Player.instance.MovePlayer(this);
             Player.instance.Damage(AttackDamage);
         }
     }

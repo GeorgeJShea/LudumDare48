@@ -42,6 +42,11 @@ public class Character : MonoBehaviour, IHitable
     {
         projectile.gameObject.transform.parent = null;
         //Instantiate(sucHit, projectile.transform.position, Quaternion.identity);
+
+        Vector3 characterDir = transform.position - projectile.transform.position;
+        characterDir = characterDir.normalized;
+        transform.position += characterDir * 0.15f;
+
         Damage(projectile.damage);
 
         destroy = true;

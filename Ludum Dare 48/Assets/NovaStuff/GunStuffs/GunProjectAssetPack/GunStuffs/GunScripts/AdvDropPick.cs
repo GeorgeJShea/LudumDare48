@@ -11,16 +11,13 @@ public class AdvDropPick : MonoBehaviour
     public KeyCode pickWeapon = KeyCode.E;
 
     private GameObject gun;                // used for dropping the gun
-    
+
     private bool handsFull = false;      // used to prevant picking up multiple guns
-    private GameObject hands;           // Used for setting gun in hands
     private GunDropAni GDA;
 
     void Start()
     {
         handsFull = Hands.handsfull;        //Hands script used to keep track of wether hands are full
-        hands = GameObject.Find("hands");  // Finds players hands
-
     }
 
     public void Update()
@@ -54,6 +51,8 @@ public class AdvDropPick : MonoBehaviour
         gun.GetComponent<GunRotation>().enabled = false;
         gun.GetComponent<AdvGunLogic>().enabled = false;
 
+        gun.GetComponent<SpriteRenderer>().sortingLayerName = "Moving";
+
         //Updates visuals including ui
         gun.transform.rotation = Quaternion.identity;
         GameObject.Find("UiManger").GetComponent<UiGun>().ammoClipSet(0, 0);
@@ -70,8 +69,10 @@ public class AdvDropPick : MonoBehaviour
         Hands.handsfull = true;
 
         //Moves guns to hand and makes child of player
-        col.transform.position = GameObject.Find("player").transform.position;
-        col.transform.parent = GameObject.Find("player").transform;
+        col.transform.position = transform.position;
+        col.transform.parent = Player.instance.transform;
+
+        col.GetComponent<SpriteRenderer>().sortingLayerName = "Foreground";
 
         // Sets gun to what it collided with
         gun = col.gameObject;
