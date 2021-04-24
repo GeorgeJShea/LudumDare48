@@ -29,16 +29,12 @@ public class Player : Character
 
     private void Update()
     {
-        anim.SetFloat("X", rb.velocity.x);
+        //anim.SetFloat("X", rb.velocity.x);
+        Vector3 mouseDir = CameraController.instance.cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
-        if (rb.velocity.sqrMagnitude == 0)
-        {
-            anim.SetBool("IsMoving", false);
-        }
-        else
-        {
-            anim.SetBool("IsMoving", true);
-        }
+        anim.SetFloat("X", mouseDir.x);
+
+        anim.SetBool("IsMoving", rb.velocity.sqrMagnitude != 0);
     }
 
     public override void Die()
