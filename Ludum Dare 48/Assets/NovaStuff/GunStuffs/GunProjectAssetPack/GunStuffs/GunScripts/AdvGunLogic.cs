@@ -91,6 +91,10 @@ public class AdvGunLogic : MonoBehaviour
     [Tooltip("How large the explosive range will be")]
     public float explosiveRange;
 
+    [Header("")]
+    [Tooltip("Fire Affect")]
+    public bool flames = false;
+
     [HideInInspector]
     public UiGun uiComponent;    //Makes refrence to ui script
 

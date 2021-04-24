@@ -42,6 +42,5 @@ public class BulletPooling : MonoBehaviour
             return bul;
         }
         return null;
-
     }
 }

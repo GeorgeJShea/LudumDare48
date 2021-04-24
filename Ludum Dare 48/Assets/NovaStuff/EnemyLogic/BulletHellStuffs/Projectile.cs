@@ -20,8 +20,10 @@ public class Projectile : MonoBehaviour
     [HideInInspector] public float speed;
     [HideInInspector] public bool destroy;
     [HideInInspector] public GameObject shotBy;
+    [HideInInspector] public bool flames;
 
     //[HideInInspector] public GameObject me;
+    [HideInInspector] public SpriteRenderer partical;
 
     private void Awake()
     {
@@ -34,6 +36,8 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("Bullet lacking sound");
         }
+
+        partical = gameObject.GetComponent<SpriteRenderer>();
     }
 
     public void bulletSet(AudioSource _bulletNoise, float _damage, float _speed, float _bulletLife, bool _destroy, GameObject _shotBy)
@@ -51,6 +55,41 @@ public class Projectile : MonoBehaviour
     {
         //Starts movement, also destroys and spawns in affects.
         BulletLogic();
+
+        FireAffect();
+
+    }
+    public void FireAffect()
+    {
+        // stupdi implmation 
+        try
+        {
+            if (GameObject.Find("player").transform.GetChild(2).name == "FlameThrower")
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.red, Color.yellow, 1);
+                if (lifeTime > 0)
+                {
+                    gameObject.transform.localScale -= new Vector3(0.01f, .01f, .01f);
+                }
+                else
+                {
+                    lifeTime -= Time.deltaTime;
+                }
+                if (transform.localScale.x < 0)
+                {
+                    transform.localScale = new Vector3(1, 1, 1);
+                }
+            }
+            else
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+        }
+        catch
+        {
+
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
