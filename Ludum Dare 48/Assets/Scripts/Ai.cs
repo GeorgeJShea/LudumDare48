@@ -14,6 +14,8 @@ public class Ai : Character
     private float waitTimer = 1;
     [HideInInspector] public Transform CurrentWaypoint;
 
+    public bool isPlayerClose;
+
     public override void Awake()
     {
         base.Awake();
@@ -24,31 +26,58 @@ public class Ai : Character
     {
         AiObjects.transform.position = Movement.position;
 
-        if (PatrolArea == null) return;
-
-        if (!CurrentWaypoint)
+        if (isPlayerClose)
         {
-            waitTimer = Random.Range(WaitTimer.x, WaitTimer.y);
-            CurrentWaypoint = PatrolArea.GetWaypoint();
-        }
-
-        if (CurrentWaypoint)
-        {
-            if (Vector2.Distance(Movement.position, CurrentWaypoint.position) < 0.05f)
+            NavMeshPath path = new NavMeshPath();
+            Agent.CalculatePath(Player.instance.transform.position, path);
+            if (GetPathLength(path) < 6)
             {
-                if (waitTimer <= 0)
+                Agent.SetDestination(Player.instance.transform.position);
+            }
+        }
+        else
+        {
+            if (PatrolArea == null) return;
+
+            if (!CurrentWaypoint)
+            {
+                waitTimer = Random.Range(WaitTimer.x, WaitTimer.y);
+                CurrentWaypoint = PatrolArea.GetWaypoint();
+            }
+
+            if (CurrentWaypoint)
+            {
+                if (Vector2.Distance(Movement.position, CurrentWaypoint.position) < 0.05f)
                 {
-                    CurrentWaypoint = null;
+                    if (waitTimer <= 0)
+                    {
+                        CurrentWaypoint = null;
+                    }
+                    else
+                    {
+                        waitTimer -= Time.deltaTime;
+                    }
                 }
                 else
                 {
-                    waitTimer -= Time.deltaTime;
+                    Agent.SetDestination(CurrentWaypoint.position);
                 }
             }
-            else
+        }
+    }
+
+    public static float GetPathLength(NavMeshPath path)
+    {
+        float lng = 0.0f;
+
+        if ((path.status != NavMeshPathStatus.PathInvalid) && (path.corners.Length > 1))
+        {
+            for (int i = 1; i < path.corners.Length; ++i)
             {
-                Agent.SetDestination(CurrentWaypoint.position);
+                lng += Vector3.Distance(path.corners[i - 1], path.corners[i]);
             }
         }
+
+        return lng;
     }
 }

@@ -42,11 +42,13 @@ public class Manager : MonoBehaviour
     public void StartUp()
     {
         //Increase Damage and other stats acording to level 
-        AgroCalc(agroRange);
-        HealthCalc(health);
-        SpeedCalc(bulletSpeed);
-        DamageCalc(bulletDamage);
-
+        if (lvl != 1)
+        {
+            AgroCalc(agroRange);
+            HealthCalc(health);
+            SpeedCalc(bulletSpeed);
+            DamageCalc(bulletDamage);
+        }
         //Gets child 
         pivot = transform.GetChild(0).gameObject;
         //Find player
@@ -59,7 +61,10 @@ public class Manager : MonoBehaviour
     public void ManagerLogic()
     {
         //Points pivot towards the player
-        pivot.transform.LookAt(player.transform, Vector2.right);
+        Vector3 diffrence = player.transform.position - transform.position;
+        diffrence.Normalize();
+        float rotz = Mathf.Atan2(diffrence.y, diffrence.x) * Mathf.Rad2Deg;
+        pivot.transform.rotation = Quaternion.Euler(0, 0, rotz);
 
         if (coolDown <= 0)
         {

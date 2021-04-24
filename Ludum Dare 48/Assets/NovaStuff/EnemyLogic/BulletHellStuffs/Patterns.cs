@@ -105,7 +105,7 @@ public class Patterns : MonoBehaviour
         
         // Moves pattern spawner to be in line with pivot
         // which means it pointing to the player 
-        transform.localRotation *= Quaternion.Euler(initialRot + 180, 0, 0);
+        transform.localRotation *= Quaternion.Euler(initialRot, 0, 0);
 
         // Does lvl calculations to increase the damage of the bullets and their speed
         damage = manager.DamageCalc(dmg);

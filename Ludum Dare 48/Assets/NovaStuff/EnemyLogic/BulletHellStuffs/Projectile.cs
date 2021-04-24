@@ -72,10 +72,10 @@ public class Projectile : MonoBehaviour
                 DestroyProjectile();
             }
         }
-        /*else
+        else
         {
             DestroyProjectile();
-        }*/
+        }
     }
 
     public void DestroyProjectile()
@@ -100,9 +100,11 @@ public class Projectile : MonoBehaviour
         transform.localScale = new Vector3(.4f, .4f, 0);
 
         // Set it to the propper rotation
-        pattern.z = pattern.x;
+        /*
+        pattern.z = -90;
         pattern.y = 0;
-        pattern.x = 0;
+        pattern.x = pattern.x;
+        */
         transform.localRotation = pattern;
 
         //lifeTimeReset = lifeTime;
@@ -113,7 +115,7 @@ public class Projectile : MonoBehaviour
         // Moves bullet forward in the direction of the blue arrow
         if (gameObject != null)
         {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
 
         // Lifetime countdown
