@@ -100,9 +100,11 @@ public class Projectile : MonoBehaviour
         transform.localScale = new Vector3(.4f, .4f, 0);
 
         // Set it to the propper rotation
-        pattern.z = pattern.x;
+        /*
+        pattern.z = -90;
         pattern.y = 0;
-        pattern.x = 0;
+        pattern.x = pattern.x;
+        */
         transform.localRotation = pattern;
 
         //lifeTimeReset = lifeTime;

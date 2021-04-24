@@ -61,7 +61,10 @@ public class Manager : MonoBehaviour
     public void ManagerLogic()
     {
         //Points pivot towards the player
-        pivot.transform.LookAt(player.transform, Vector2.right);
+        Vector3 diffrence = player.transform.position - transform.position;
+        diffrence.Normalize();
+        float rotz = Mathf.Atan2(diffrence.y, diffrence.x) * Mathf.Rad2Deg;
+        pivot.transform.rotation = Quaternion.Euler(0, 0, rotz);
 
         if (coolDown <= 0)
         {
