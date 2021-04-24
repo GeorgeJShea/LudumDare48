@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8838902710252025933}
   - component: {fileID: 3814234931329937371}
   - component: {fileID: 3564547303198661585}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bullet2(Wall)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 5228037817794685547}
   - component: {fileID: 3372346679925400318}
   - component: {fileID: 5708763472504498014}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bullet2(Wall)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,9 +183,10 @@ MonoBehaviour:
   lifeTime: 2
   petterOut: {fileID: 0}
   sucHit: {fileID: 0}
+  bulletNoise: {fileID: 0}
   damage: 11
   speed: 10
-  me: {fileID: 0}
+  destroy: 0
 --- !u!212 &5228037817794685547
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -297,7 +298,7 @@ GameObject:
   - component: {fileID: 1538884295652128180}
   - component: {fileID: 8119640627889901623}
   - component: {fileID: 7897687378940090561}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bullet2(Wall) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

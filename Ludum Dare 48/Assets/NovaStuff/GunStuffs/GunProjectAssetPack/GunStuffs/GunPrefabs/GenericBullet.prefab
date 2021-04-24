@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6219301875834344353}
   - component: {fileID: 8737993597585678528}
   - component: {fileID: 6814813824184028905}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GenericBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,10 +122,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4996672021122051325}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ed1704bdfa82d4ab758376d92ecb03, type: 3}
+  m_Script: {fileID: 11500000, guid: 27d96ee88923c0a45920eda889069d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeTime: 0
+  petterOut: {fileID: 0}
+  sucHit: {fileID: 0}
   bulletNoise: {fileID: 0}
+  damage: 0
+  speed: 0
+  destroy: 0
 --- !u!50 &8737993597585678528
 Rigidbody2D:
   serializedVersion: 4

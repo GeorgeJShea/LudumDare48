@@ -66,7 +66,7 @@ public class Patterns : MonoBehaviour
             // Shoots a bullet sets it to be a child, sets propper rotation and finally passes in relavent info
             GameObject temp = Instantiate(bulletType, transform.position, transform.localRotation);
             temp.transform.parent = transform.parent;
-            temp.GetComponent<Projectile>().IAmAlive(damage, bulletSpeed, temp, transform.localRotation);
+            temp.GetComponent<Projectile>().IAmAlive(damage, bulletSpeed, transform.localRotation, manager.gameObject);
 
             //Preps for next volly
             coolDown = coolDownReset;
@@ -105,7 +105,7 @@ public class Patterns : MonoBehaviour
         
         // Moves pattern spawner to be in line with pivot
         // which means it pointing to the player 
-        transform.localRotation *= Quaternion.Euler(initialRot, 0, 0);
+        transform.localRotation *= Quaternion.Euler(initialRot + 180, 0, 0);
 
         // Does lvl calculations to increase the damage of the bullets and their speed
         damage = manager.DamageCalc(dmg);
