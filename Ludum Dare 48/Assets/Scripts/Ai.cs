@@ -14,7 +14,14 @@ public class Ai : Character
     private float waitTimer = 1;
     [HideInInspector] public Transform CurrentWaypoint;
 
+    public float AttackRange = 1;
+    public float AttackDamage = 5;
+
     public bool isPlayerClose;
+    public Animator anim;
+    public bool isAttacking;
+
+    public Vector2 GraphicsOffset;
 
     public override void Awake()
     {
@@ -24,45 +31,75 @@ public class Ai : Character
 
     private void Update()
     {
-        AiObjects.transform.position = Movement.position;
+        AiObjects.transform.position = Movement.position + (Vector3)GraphicsOffset;
 
-        if (isPlayerClose)
+        isAttacking = anim.GetCurrentAnimatorStateInfo(0).IsName("Attack");
+
+        anim.SetFloat("X", Agent.velocity.x);
+
+        if (!isAttacking)
         {
-            NavMeshPath path = new NavMeshPath();
-            Agent.CalculatePath(Player.instance.transform.position, path);
-            if (GetPathLength(path) < 6)
+            if (isPlayerClose)
             {
-                Agent.SetDestination(Player.instance.transform.position);
-            }
-        }
-        else
-        {
-            if (PatrolArea == null) return;
-
-            if (!CurrentWaypoint)
-            {
-                waitTimer = Random.Range(WaitTimer.x, WaitTimer.y);
-                CurrentWaypoint = PatrolArea.GetWaypoint();
-            }
-
-            if (CurrentWaypoint)
-            {
-                if (Vector2.Distance(Movement.position, CurrentWaypoint.position) < 0.05f)
+                NavMeshPath path = new NavMeshPath();
+                Agent.CalculatePath(Player.instance.transform.position, path);
+                float pathLength = GetPathLength(path);
+                if (pathLength < 6)
                 {
-                    if (waitTimer <= 0)
+                    if (pathLength < 1)
                     {
-                        CurrentWaypoint = null;
+                        anim.Play("Attack");
+                        Agent.isStopped = true;
                     }
                     else
                     {
-                        waitTimer -= Time.deltaTime;
+                        SetDestination(Player.instance.transform.position);
                     }
                 }
-                else
+            }
+            else
+            {
+                if (PatrolArea == null) return;
+
+                if (!CurrentWaypoint)
                 {
-                    Agent.SetDestination(CurrentWaypoint.position);
+                    waitTimer = Random.Range(WaitTimer.x, WaitTimer.y);
+                    CurrentWaypoint = PatrolArea.GetWaypoint();
+                }
+
+                if (CurrentWaypoint)
+                {
+                    if (Vector2.Distance(Movement.position, CurrentWaypoint.position) < 0.05f)
+                    {
+                        if (waitTimer <= 0)
+                        {
+                            CurrentWaypoint = null;
+                        }
+                        else
+                        {
+                            waitTimer -= Time.deltaTime;
+                        }
+                    }
+                    else
+                    {
+                        SetDestination(CurrentWaypoint.position);
+                    }
                 }
             }
+        }
+    }
+
+    public void SetDestination(Vector3 dest)
+    {
+        Agent.isStopped = false;
+        Agent.SetDestination(dest);
+    }
+
+    public override void AnimEvent()
+    {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            Player.instance.Damage(AttackDamage);
         }
     }
 

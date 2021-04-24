@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 29d56b1220628de4e8d7bb2299e3128d
-=======
-guid: d943f8ff4456705449b7d1fe57555315
->>>>>>> b150bf4f3a4bdd7bfcff106f971d613770b3aca1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -36,16 +32,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
-    filterMode: -1
-=======
     filterMode: 0
->>>>>>> b150bf4f3a4bdd7bfcff106f971d613770b3aca1
     aniso: -1
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -54,11 +46,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-  spritePixelsToUnits: 100
-=======
   spritePixelsToUnits: 32
->>>>>>> b150bf4f3a4bdd7bfcff106f971d613770b3aca1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -73,16 +61,10 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-<<<<<<< HEAD
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-=======
     maxTextureSize: 32
     resizeAlgorithm: 0
     textureFormat: -1
@@ -99,7 +81,6 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
->>>>>>> b150bf4f3a4bdd7bfcff106f971d613770b3aca1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0

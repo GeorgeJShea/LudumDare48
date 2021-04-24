@@ -36,4 +36,9 @@ public class Character : MonoBehaviour, IHitable
 
         destroy = true;
     }
+
+    public virtual void AnimEvent()
+    {
+
+    }
 }
