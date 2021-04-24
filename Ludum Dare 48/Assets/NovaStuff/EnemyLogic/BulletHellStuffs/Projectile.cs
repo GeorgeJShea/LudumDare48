@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
     [Tooltip("Place bullet destruction affect")]
     public GameObject petterOut;
     public GameObject sucHit;
-    
+
     // Dirived from manager script
     [HideInInspector] public int damage;
     [HideInInspector] public float speed;
@@ -30,12 +30,12 @@ public class Projectile : MonoBehaviour
     {
         IHitable hitable = collision.GetComponentInParent<IHitable>();
 
-        hitable.Hit(this);
+        if (hitable != null) hitable.Hit(this);
     }
     public void HurtPlayer(int damage)
     {
         //refrphace player health here and add amage to it
-    }    
+    }
     public void IAmAlive(int damage2, float speed2, GameObject temp, Quaternion pattern)
     {
         // Temp is the spawned in bullet 
@@ -64,7 +64,7 @@ public class Projectile : MonoBehaviour
         {
             me.transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
-         
+
         // Lifetime countdown
         if (lifeTime <= 0)
         {
