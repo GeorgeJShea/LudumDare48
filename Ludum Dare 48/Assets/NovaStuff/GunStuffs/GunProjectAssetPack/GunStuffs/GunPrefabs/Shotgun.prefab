@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 2042660509755404610}
   - component: {fileID: 2042660509755404613}
   - component: {fileID: -1459795947788489136}
+  - component: {fileID: -3112918721654312317}
   m_Layer: 13
   m_Name: Shotgun
   m_TagString: gun
@@ -104,8 +105,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -403150397
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 71ac6cf8d6308be419c042253f89d908, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -208,3 +209,19 @@ MonoBehaviour:
   speed: 0.04
   height: 0.05
   droppedBool: 1
+--- !u!114 &-3112918721654312317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042660509755404612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 963f8ecc8b6c3594b85233f143b9c058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SorterPositionOffset: {x: 0, y: -0.5, z: 0}
+  isMovable: 0
+  renderers:
+  - {fileID: 2042660509755404608}
