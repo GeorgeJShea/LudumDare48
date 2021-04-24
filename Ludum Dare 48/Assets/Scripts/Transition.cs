@@ -7,6 +7,12 @@ using System.Collections;
 
 public class Transition : MonoBehaviour
 {
+    public int nextLevel;
+    public bool died = false;
+    public void Clicked()
+    {
+        StartCoroutine(FadeImage(nextLevel, died));
+    }
     public IEnumerator FadeImage(int nextSceneToLoad, bool died)
     {
         //Sets up scene

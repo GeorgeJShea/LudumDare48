@@ -62,6 +62,8 @@ public class Projectile : MonoBehaviour
     public void FireAffect()
     {
         // stupdi implmation 
+
+        // stupdi implmation 
         try
         {
             if (GameObject.Find("player").transform.GetChild(2).name == "FlameThrower")
@@ -90,6 +92,7 @@ public class Projectile : MonoBehaviour
         {
 
         }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
