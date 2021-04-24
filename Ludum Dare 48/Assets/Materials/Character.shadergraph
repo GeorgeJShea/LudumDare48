@@ -1320,7 +1320,7 @@
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "FlickerFade",
     "m_DefaultReferenceName": "FlickerFade",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_FlickerFade",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,

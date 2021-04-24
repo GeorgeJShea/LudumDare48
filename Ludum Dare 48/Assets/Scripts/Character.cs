@@ -6,6 +6,8 @@ public class Character : MonoBehaviour, IHitable
 {
     public float StartHealth = 100;
 
+    public Renderer rend;
+
     public float Health { get { return health; } set { health = value; } }
     protected float health;
 
@@ -16,11 +18,19 @@ public class Character : MonoBehaviour, IHitable
 
     public virtual void Damage(float damage)
     {
+        StartCoroutine(Flicker());
         health -= damage;
         if (health <= 0)
         {
             Die();
         }
+    }
+
+    public virtual IEnumerator Flicker(float time = 0.1f)
+    {
+        rend.material.SetFloat("_FlickerFade", 1);
+        yield return new WaitForSeconds(time);
+        rend.material.SetFloat("_FlickerFade", 0);
     }
 
     public virtual void Die()

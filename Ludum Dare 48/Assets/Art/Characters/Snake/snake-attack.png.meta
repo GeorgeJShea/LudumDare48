@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 731a0624a7b55dc4ebecbdcaffd861c2
+guid: a75f1e8f31d17a349a2156280bd1c40e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7261038286600492402
-    second: SnakeSpritesheet_0
+      213: -5788797989114524572
+    second: snake-attack_0
   - first:
-      213: -6400748526884670597
-    second: SnakeSpritesheet_1
+      213: -4216556320794136331
+    second: snake-attack_1
   - first:
-      213: -8929690043946052986
-    second: SnakeSpritesheet_2
+      213: -5305895057746292009
+    second: snake-attack_2
   - first:
-      213: 3814452925428815693
-    second: SnakeSpritesheet_3
+      213: 6063445415264556295
+    second: snake-attack_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -77,7 +77,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -89,7 +89,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 128
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -103,7 +103,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SnakeSpritesheet_0
+      name: snake-attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c455636ee0aafa0800000000000000
+      internalID: -5788797989114524572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snake-attack_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f033a3dd58cb75c0800000000000000
+      internalID: -4216556320794136331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snake-attack_2
       rect:
         serializedVersion: 2
         x: 0
@@ -117,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8aaaa2262c9b3b90800000000000000
-      internalID: -7261038286600492402
+      spriteID: 7d2188b8e8cad56b0800000000000000
+      internalID: -5305895057746292009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SnakeSpritesheet_1
+      name: snake-attack_3
       rect:
         serializedVersion: 2
         x: 32
@@ -138,50 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b733f6e9029fb27a0800000000000000
-      internalID: -6400748526884670597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnakeSpritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 682d040773e531480800000000000000
-      internalID: -8929690043946052986
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SnakeSpritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d4752a0d9b8afe430800000000000000
-      internalID: 3814452925428815693
+      spriteID: 70590dbca7fa52450800000000000000
+      internalID: 6063445415264556295
       vertices: []
       indices: 
       edges: []

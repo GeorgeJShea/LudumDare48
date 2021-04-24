@@ -38,6 +38,7 @@ Material:
     m_Ints: []
     m_Floats:
     - FlickerFade: 0
+    - _FlickerFade: 0
     m_Colors:
-    - _FickerColor: {r: 1, g: 1, b: 1, a: 0}
+    - _FickerColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

@@ -48,28 +48,16 @@ SpriteAtlas:
     - {fileID: 4009252943080635548, guid: 79c2390dc4f98454aaf71bc91f6cd148, type: 3}
     - {fileID: -299910795255616984, guid: 79c2390dc4f98454aaf71bc91f6cd148, type: 3}
     - {fileID: -6649329487044930243, guid: 79c2390dc4f98454aaf71bc91f6cd148, type: 3}
-    - {fileID: -7261038286600492402, guid: 731a0624a7b55dc4ebecbdcaffd861c2, type: 3}
-    - {fileID: -6400748526884670597, guid: 731a0624a7b55dc4ebecbdcaffd861c2, type: 3}
-    - {fileID: -8929690043946052986, guid: 731a0624a7b55dc4ebecbdcaffd861c2, type: 3}
-    - {fileID: 3814452925428815693, guid: 731a0624a7b55dc4ebecbdcaffd861c2, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: -8929690043946052986, guid: 731a0624a7b55dc4ebecbdcaffd861c2, type: 3}
-  - {fileID: 3814452925428815693, guid: 731a0624a7b55dc4ebecbdcaffd861c2, type: 3}
-  - {fileID: -7261038286600492402, guid: 731a0624a7b55dc4ebecbdcaffd861c2, type: 3}
-  - {fileID: -6400748526884670597, guid: 731a0624a7b55dc4ebecbdcaffd861c2, type: 3}
   - {fileID: -6649329487044930243, guid: 79c2390dc4f98454aaf71bc91f6cd148, type: 3}
   - {fileID: -299910795255616984, guid: 79c2390dc4f98454aaf71bc91f6cd148, type: 3}
   - {fileID: 4009252943080635548, guid: 79c2390dc4f98454aaf71bc91f6cd148, type: 3}
   - {fileID: 7676652047173366604, guid: 79c2390dc4f98454aaf71bc91f6cd148, type: 3}
   m_PackedSpriteNamesToIndex:
-  - SnakeSpritesheet_2
-  - SnakeSpritesheet_3
-  - SnakeSpritesheet_0
-  - SnakeSpritesheet_1
   - snake-boot_3
   - snake-boot_2
   - snake-boot_1
