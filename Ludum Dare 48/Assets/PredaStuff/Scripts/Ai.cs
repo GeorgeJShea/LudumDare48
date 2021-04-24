@@ -12,13 +12,18 @@ public class Ai : MonoBehaviour, IHitable
 
     public void Damage(float damage)
     {
-
+        health -= damage;
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Hit(Projectile projectile)
     {
         projectile.gameObject.transform.parent = null;
         //Instantiate(sucHit, projectile.transform.position, Quaternion.identity);
+        Damage(projectile.damage);
         Destroy(projectile.gameObject);
     }
 }
