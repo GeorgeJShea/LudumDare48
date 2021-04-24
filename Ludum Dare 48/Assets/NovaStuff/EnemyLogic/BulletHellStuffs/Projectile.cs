@@ -113,7 +113,7 @@ public class Projectile : MonoBehaviour
         // Moves bullet forward in the direction of the blue arrow
         if (gameObject != null)
         {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
 
         // Lifetime countdown
