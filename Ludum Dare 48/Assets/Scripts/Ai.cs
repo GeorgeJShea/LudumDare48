@@ -23,10 +23,20 @@ public class Ai : Character
 
     public Vector2 GraphicsOffset;
 
+    private float playerRange = 6;
+
     public override void Awake()
     {
         base.Awake();
         Movement = Agent.transform;
+    }
+
+    public override void Damage(float damage)
+    {
+        base.Damage(damage);
+
+        isPlayerClose = true;
+        playerRange = 30;
     }
 
     protected virtual void Update()
@@ -47,7 +57,7 @@ public class Ai : Character
                 NavMeshPath path = new NavMeshPath();
                 Agent.CalculatePath(Player.instance.transform.position, path);
                 float pathLength = GetPathLength(path);
-                if (pathLength < 6)
+                if (pathLength < playerRange)
                 {
                     if (pathLength < 1)
                     {
@@ -59,9 +69,15 @@ public class Ai : Character
                         SetDestination(Player.instance.transform.position);
                     }
                 }
+                else
+                {
+                    isPlayerClose = false;
+                }
             }
             else
             {
+                playerRange = 6;
+
                 if (PatrolArea == null) return;
 
                 if (!CurrentWaypoint)
