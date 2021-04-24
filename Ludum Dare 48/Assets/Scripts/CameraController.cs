@@ -9,8 +9,12 @@ public class CameraController : MonoBehaviour
     public Transform target;
     [HideInInspector] public Camera cam;
 
+    public static CameraController instance;
+
     private void Awake()
     {
+        instance = this;
+
         cam = GetComponent<Camera>();
     }
 
