@@ -72,10 +72,10 @@ public class Projectile : MonoBehaviour
                 DestroyProjectile();
             }
         }
-        /*else
+        else
         {
             DestroyProjectile();
-        }*/
+        }
     }
 
     public void DestroyProjectile()

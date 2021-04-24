@@ -18,8 +18,8 @@ TagManager:
   - player
   - enemyBullet
   - playerBullet
-  - 
-  - 
+  - playerDetect
+  - enemyDetect
   - 
   - 
   - 
