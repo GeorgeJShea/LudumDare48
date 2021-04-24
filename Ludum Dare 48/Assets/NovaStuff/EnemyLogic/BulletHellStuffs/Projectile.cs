@@ -13,13 +13,39 @@ public class Projectile : MonoBehaviour
     public GameObject petterOut;
     public GameObject sucHit;
 
+    public AudioSource bulletNoise;
+
     // Dirived from manager script
-    [HideInInspector] public int damage;
+    [HideInInspector] public float damage;
     [HideInInspector] public float speed;
+    [HideInInspector] public bool destroy;
+    [HideInInspector] public GameObject shotBy;
 
-    [HideInInspector] public GameObject me;
+    //[HideInInspector] public GameObject me;
 
+    private void Awake()
+    {
+        //Plays bullet noise
+        if (bulletNoise != null)
+        {
+            bulletNoise.Play();
+        }
+        else
+        {
+            Debug.Log("Bullet lacking sound");
+        }
+    }
 
+    public void bulletSet(AudioSource _bulletNoise, float _damage, float _speed, float _bulletLife, bool _destroy, GameObject _shotBy)
+    {
+        bulletNoise = _bulletNoise;
+        damage = _damage;
+        speed = _speed;
+        lifeTime = _bulletLife;
+        lifeTimeReset = _bulletLife;
+        destroy = _destroy;
+        shotBy = _shotBy;
+    }
 
     public void Update()
     {
@@ -30,39 +56,64 @@ public class Projectile : MonoBehaviour
     {
         IHitable hitable = collision.GetComponentInParent<IHitable>();
 
-        if (hitable != null) hitable.Hit(this);
+        if (hitable != null)
+        {
+            if(shotBy)
+            {
+                if (collision.transform.IsChildOf(shotBy.transform))
+                {
+                    return;
+                }
+            }
+
+            hitable.Hit(this, out bool _destroy);
+            if (_destroy)
+            {
+                DestroyProjectile();
+            }
+        }
+        /*else
+        {
+            DestroyProjectile();
+        }*/
     }
-    public void HurtPlayer(int damage)
+
+    public void DestroyProjectile()
     {
-        //refrphace player health here and add amage to it
+        if (destroy)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
-    public void IAmAlive(int damage2, float speed2, GameObject temp, Quaternion pattern)
+
+    public void IAmAlive(int _damage, float _speed, Quaternion pattern, GameObject _shotBy)
     {
+        bulletSet(null, _damage, _speed, lifeTime, true, _shotBy);
+
         // Temp is the spawned in bullet 
         // Spawned from patterns script
-        me = temp;
         // Fixs weird scale as it is a child
-        temp.transform.localScale = new Vector3(.4f, .4f, 0);
+        transform.localScale = new Vector3(.4f, .4f, 0);
 
         // Set it to the propper rotation
         pattern.z = pattern.x;
         pattern.y = 0;
         pattern.x = 0;
-        temp.transform.localRotation = pattern;
+        transform.localRotation = pattern;
 
-        // Updates Bullet data
-        damage = damage2;
-        speed = speed2;
-
-        // Sets up lifetime timer
-        lifeTimeReset = lifeTime;
+        //lifeTimeReset = lifeTime;
     }
+
     public void BulletLogic()
     {
         // Moves bullet forward in the direction of the blue arrow
-        if (me != null)
+        if (gameObject != null)
         {
-            me.transform.Translate(Vector3.left * speed * Time.deltaTime);
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
 
         // Lifetime countdown
@@ -73,7 +124,8 @@ public class Projectile : MonoBehaviour
                 // Instates an affect if bullet petters out
                 Instantiate(petterOut, transform.position, Quaternion.identity);
             }
-            Destroy(gameObject);
+            DestroyProjectile();
+            //Destroy(gameObject);
 
             // resets the timer
             lifeTime = lifeTimeReset;

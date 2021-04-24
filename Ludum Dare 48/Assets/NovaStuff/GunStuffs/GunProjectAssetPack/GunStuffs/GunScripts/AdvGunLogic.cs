@@ -170,7 +170,7 @@ public class AdvGunLogic : MonoBehaviour
         bul.transform.rotation = bulletDev;
         bul.SetActive(true);
 
-        bul.GetComponent<Bullet>().bulletSet(bulletNoise, damage, speed, bulletLife, pierceNumb, explosive, explosiveAffect, explosiveRange, explosiveDamage);
+        bul.GetComponent<Projectile>().bulletSet(bulletNoise, damage, speed, bulletLife, false, transform.root.gameObject);
 
         // Used to make sure that a ton of particles dont spawn
         if (lagTimeReset >= .1 && toFast == true)
