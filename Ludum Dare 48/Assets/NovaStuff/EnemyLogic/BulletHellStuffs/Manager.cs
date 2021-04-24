@@ -42,11 +42,13 @@ public class Manager : MonoBehaviour
     public void StartUp()
     {
         //Increase Damage and other stats acording to level 
-        AgroCalc(agroRange);
-        HealthCalc(health);
-        SpeedCalc(bulletSpeed);
-        DamageCalc(bulletDamage);
-
+        if (lvl != 1)
+        {
+            AgroCalc(agroRange);
+            HealthCalc(health);
+            SpeedCalc(bulletSpeed);
+            DamageCalc(bulletDamage);
+        }
         //Gets child 
         pivot = transform.GetChild(0).gameObject;
         //Find player
