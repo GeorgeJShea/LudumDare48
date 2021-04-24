@@ -16,12 +16,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
 
-        moveVelocity = moveInput.normalized * speed;
+        moveVelocity = new Vector2(moveX, moveY).normalized;
     }
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+        rb.velocity = new Vector2(moveVelocity.x * speed, moveVelocity.y * speed);
     }
 }
