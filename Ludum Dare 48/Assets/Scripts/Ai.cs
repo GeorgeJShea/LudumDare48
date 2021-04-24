@@ -29,13 +29,16 @@ public class Ai : Character
         Movement = Agent.transform;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         AiObjects.transform.position = Movement.position + (Vector3)GraphicsOffset;
 
         isAttacking = anim.GetCurrentAnimatorStateInfo(0).IsName("Attack");
 
-        anim.SetFloat("X", Agent.velocity.x);
+        if (Mathf.Abs(Agent.velocity.x) > 0.01f)
+        {
+            anim.SetFloat("X", Agent.velocity.x);
+        }
 
         if (!isAttacking)
         {
