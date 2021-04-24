@@ -45,6 +45,8 @@ public class Ai : Character
 
         isAttacking = anim.GetCurrentAnimatorStateInfo(0).IsName("Attack");
 
+        anim.SetBool("IsMoving", Agent.velocity.sqrMagnitude != 0);
+
         if (Mathf.Abs(Agent.velocity.x) > 0.01f)
         {
             anim.SetFloat("X", Agent.velocity.x);
