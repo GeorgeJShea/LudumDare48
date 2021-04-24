@@ -7,6 +7,7 @@ using System.Collections;
 
 public class Transition : MonoBehaviour
 {
+    public GameObject screenFade;
     public int nextLevel;
     public bool died = false;
     public void Clicked()
@@ -21,6 +22,7 @@ public class Transition : MonoBehaviour
         GameObject screenFade = GameObject.Find("ScreenFade");
 
         Image image = screenFade.GetComponent<Image>();
+        image.enabled = true;
 
         // Grabs u died game object and sets it off
         GameObject uDied = transform.GetChild(0).gameObject;
@@ -39,10 +41,12 @@ public class Transition : MonoBehaviour
             yield return new WaitForSeconds(3);
 
             Debug.Log("you ded");
-            //SceneManager.LoadScene(nextSceneToLoad);
+            SceneManager.LoadScene(nextSceneToLoad);
         }
 
         Debug.Log("next scene tottaly loaded got o script when we actually have scenes");
-        //SceneManager.LoadScene(nextSceneToLoad);
+        
+        
+        SceneManager.LoadScene(nextSceneToLoad);
     }
 }
