@@ -43,13 +43,18 @@ public class Character : MonoBehaviour, IHitable
         projectile.gameObject.transform.parent = null;
         //Instantiate(sucHit, projectile.transform.position, Quaternion.identity);
 
-        Vector3 characterDir = transform.position - projectile.transform.position;
-        characterDir = characterDir.normalized;
-        transform.position += characterDir * 0.15f;
+        MoveCharacter(projectile.transform.position);
 
         Damage(projectile.damage);
 
         destroy = true;
+    }
+
+    public virtual void MoveCharacter(Vector3 by)
+    {
+        Vector3 characterDir = transform.position - by;
+        characterDir = characterDir.normalized;
+        transform.position += characterDir * 0.15f;
     }
 
     public virtual void AnimEvent()

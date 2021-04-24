@@ -78,18 +78,6 @@ public class AdvGunLogic : MonoBehaviour
     public float speed;
     [Tooltip("How long the bullet will remain on screen")]
     public float bulletLife;
-    [Tooltip("How man enemies the bullet will go through")]
-    public int pierceNumb;
-
-    [Header("")]
-    [Tooltip("set to true to have explosive")]
-    public bool explosive;
-    [Tooltip("Put explosion affect here")]
-    public GameObject explosiveAffect;
-    [Tooltip("Choice how much damage the explosive will do")]
-    public float explosiveDamage;
-    [Tooltip("How large the explosive range will be")]
-    public float explosiveRange;
 
     [Header("")]
     [Tooltip("Fire Affect")]

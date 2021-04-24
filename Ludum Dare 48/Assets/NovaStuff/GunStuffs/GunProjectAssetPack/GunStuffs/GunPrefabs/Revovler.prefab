@@ -186,11 +186,6 @@ MonoBehaviour:
   damage: 6
   speed: 20
   bulletLife: 1
-  pierceNumb: 1
-  explosive: 0
-  explosiveAffect: {fileID: 5398143623913548616, guid: 65eb1a67afacbc34bb4a35e3de1a95de, type: 3}
-  explosiveDamage: 0
-  explosiveRange: 0
   flames: 0
   uiComponent: {fileID: 0}
 --- !u!114 &-2866761451970908432
