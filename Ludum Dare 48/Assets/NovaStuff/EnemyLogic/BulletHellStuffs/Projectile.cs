@@ -28,24 +28,9 @@ public class Projectile : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
-        {
-            gameObject.transform.parent = null;
-            HurtPlayer(damage);
+        IHitable hitable = collision.GetComponentInParent<IHitable>();
 
-            //Instantiate(sucHit, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
-        else if(collision.tag != "enemy")
-        {
-            gameObject.transform.parent = null;
-            //Instantiate(sucHit, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
-        else if(collision.tag == "bullet")
-        {
-            // do nothing
-        }
+        hitable.Hit(this);
     }
     public void HurtPlayer(int damage)
     {
