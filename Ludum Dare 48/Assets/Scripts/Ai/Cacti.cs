@@ -65,6 +65,8 @@ public class Cacti : Character
 
             //temp.transform.right = playerDir;
             temp.GetComponent<Projectile>().bulletSet(null, projectileDamage, projectileSpeed, playerDir, projectileLife, true, gameObject, ThrowPos.localPosition.y);
+
+            anim.SetFloat("X", playerDir.x);
         }
     }
 }

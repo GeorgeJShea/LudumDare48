@@ -184,7 +184,7 @@ MonoBehaviour:
   BulletPool: {fileID: 510192862849099944}
   gunNoise: {fileID: 0}
   bulletNoise: {fileID: 0}
-  damage: 34
+  damage: 20
   speed: 20
   bulletLife: 1
   isSemi: 1
