@@ -24,6 +24,13 @@ public class Player : Character
     public override void Awake()
     {
         base.Awake();
+
+        if (instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         rb = GetComponent<Rigidbody2D>();
     }
 

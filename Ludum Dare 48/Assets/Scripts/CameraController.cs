@@ -13,6 +13,12 @@ public class CameraController : MonoBehaviour
 
     private void Awake()
     {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         instance = this;
 
         cam = GetComponent<Camera>();

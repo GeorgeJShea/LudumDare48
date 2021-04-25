@@ -12,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 6e8e247e0e457af42a9b9e2e5126a6fe
   - enabled: 1
-    path: Assets/Scenes/PredaScene.unity
-    guid: fcac22eff3821c64182e5ace18502c76
+    path: Assets/Scenes/LoadScene.unity
+    guid: a0fae021980e87e4db3228c1ea5e8d26
   - enabled: 1
-    path: Assets/Scenes/NovaScene.unity
-    guid: e8d0b7d9979ce6c4c8b6f7160809aa8c
+    path: Assets/Scenes/TestLevel.unity
+    guid: 24b6bba74c274b642b881d4849357dd2
+  - enabled: 1
+    path: Assets/Scenes/TestLevel 1.unity
+    guid: dd35bd61caf9db442b15a29c3fa07abe
   m_configObjects: {}
