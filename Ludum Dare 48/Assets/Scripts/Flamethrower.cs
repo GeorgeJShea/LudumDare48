@@ -38,7 +38,7 @@ public class Flamethrower : Item
             ammoPool -= Time.deltaTime;
             for (int i = 0; i < Trigger.Enemies.Count; i++)
             {
-                if (!CheckWallBetween(Trigger.Enemies[i] as Ai, transform.position))
+                if (!CheckWallBetween(Trigger.Enemies[i], transform.position))
                 {
                     if (Trigger.Enemies[i])
                     {
@@ -51,10 +51,10 @@ public class Flamethrower : Item
         uiComponent.ammoClipSet(Mathf.Ceil(ammoPool), Mathf.Infinity);
     }
 
-    public bool CheckWallBetween(Ai toCheck, Vector3 fromPos)
+    public bool CheckWallBetween(Character toCheck, Vector3 fromPos)
     {
-        Vector2 toCheckDir = toCheck.Movement.position - fromPos;
-        RaycastHit2D hit = Physics2D.Raycast(fromPos, toCheckDir, Vector2.Distance(fromPos, toCheck.Movement.position), LayerMask.GetMask("wall"));
+        Vector2 toCheckDir = toCheck.GetPosition() - fromPos;
+        RaycastHit2D hit = Physics2D.Raycast(fromPos, toCheckDir, Vector2.Distance(fromPos, toCheck.GetPosition()), LayerMask.GetMask("wall"));
         return hit.collider;
     }
 }

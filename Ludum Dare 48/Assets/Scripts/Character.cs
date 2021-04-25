@@ -45,6 +45,11 @@ public class Character : MonoBehaviour, IHitable
         return hit.collider;
     }
 
+    public virtual Vector3 GetPosition()
+    {
+        return transform.position;
+    }
+
     public virtual void Hit(Projectile projectile, out bool destroy)
     {
         projectile.gameObject.transform.parent = null;

@@ -120,6 +120,11 @@ public class Ai : Character
         Agent.SetDestination(dest);
     }
 
+    public override Vector3 GetPosition()
+    {
+        return Movement.position;
+    }
+
     public override void AnimEvent()
     {
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
