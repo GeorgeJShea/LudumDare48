@@ -24,6 +24,7 @@ public class Cacti : Character
         if (!isAttacking)
         {
             Vector3 throwPos = new Vector3(ThrowPos.localPosition.x * Mathf.Sign(anim.GetFloat("X")), ThrowPos.localPosition.y);
+            throwPos = transform.TransformPoint(throwPos);
 
             if (isPlayerClose && !CheckWallBetween(Player.instance, throwPos))
             {
@@ -55,7 +56,10 @@ public class Cacti : Character
             Vector3 throwPos = new Vector3(ThrowPos.localPosition.x * Mathf.Sign(anim.GetFloat("X")), ThrowPos.localPosition.y);
             temp.transform.localPosition = throwPos;
 
-            Vector3 playerDir = Player.instance.transform.position - (transform.position + throwPos);
+            throwPos = transform.TransformPoint(throwPos);
+
+
+            Vector3 playerDir = ShootPrediction.FirstOrderIntercept(throwPos, Vector2.zero, projectileSpeed, Player.instance.transform.position, Player.instance.rb.velocity) - throwPos;
             playerDir = playerDir.normalized;
 
             temp.transform.right = playerDir;
