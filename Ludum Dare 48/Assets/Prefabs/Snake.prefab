@@ -59,7 +59,7 @@ MonoBehaviour:
   anim: {fileID: 4741976769521792357}
   isAttacking: 0
   GraphicsOffset: {x: 0, y: 0.5}
-  JumpSpeed: 3.5
+  JumpSpeed: 5
   Move: 0
 --- !u!1 &4741976768227972817
 GameObject:
