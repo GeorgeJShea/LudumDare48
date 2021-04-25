@@ -53,17 +53,18 @@ public class Cacti : Character
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
             GameObject temp = Instantiate(CactiProjectile, transform);
-            Vector3 throwPos = new Vector3(ThrowPos.localPosition.x * Mathf.Sign(anim.GetFloat("X")), ThrowPos.localPosition.y);
+            Vector3 throwPos = new Vector3(ThrowPos.localPosition.x * Mathf.Sign(anim.GetFloat("X")), 0);
             temp.transform.localPosition = throwPos;
 
+            throwPos.y = 0;
             throwPos = transform.TransformPoint(throwPos);
 
 
             Vector3 playerDir = ShootPrediction.FirstOrderIntercept(throwPos, Vector2.zero, projectileSpeed, Player.instance.transform.position, Player.instance.rb.velocity) - throwPos;
             playerDir = playerDir.normalized;
 
-            temp.transform.right = playerDir;
-            temp.GetComponent<Projectile>().bulletSet(null, projectileDamage, projectileSpeed, projectileLife, true, gameObject);
+            //temp.transform.right = playerDir;
+            temp.GetComponent<Projectile>().bulletSet(null, projectileDamage, projectileSpeed, playerDir, projectileLife, true, gameObject, ThrowPos.localPosition.y);
         }
     }
 }

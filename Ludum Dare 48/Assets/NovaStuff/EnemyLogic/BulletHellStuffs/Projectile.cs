@@ -15,12 +15,18 @@ public class Projectile : MonoBehaviour
 
     public AudioSource bulletNoise;
 
+    public GameObject Graphics;
+
     // Dirived from manager script
     [HideInInspector] public float damage;
     [HideInInspector] public float speed;
     [HideInInspector] public bool destroy;
     [HideInInspector] public GameObject shotBy;
     [HideInInspector] public bool flames;
+
+    [HideInInspector] public Vector3 MoveDir;
+    private float bulletHeight;
+    private float shotTime;
 
     //[HideInInspector] public GameObject me;
     [HideInInspector] public SpriteRenderer partical;
@@ -40,7 +46,7 @@ public class Projectile : MonoBehaviour
         partical = gameObject.GetComponent<SpriteRenderer>();
     }
 
-    public void bulletSet(AudioSource _bulletNoise, float _damage, float _speed, float _bulletLife, bool _destroy, GameObject _shotBy)
+    public void bulletSet(AudioSource _bulletNoise, float _damage, float _speed, Vector3 _dir, float _bulletLife, bool _destroy, GameObject _shotBy, float _bulletHeight)
     {
         bulletNoise = _bulletNoise;
         damage = _damage;
@@ -49,6 +55,11 @@ public class Projectile : MonoBehaviour
         lifeTimeReset = _bulletLife;
         destroy = _destroy;
         shotBy = _shotBy;
+        MoveDir = _dir;
+        Graphics.transform.localPosition = new Vector3(0, _bulletHeight);
+        bulletHeight = _bulletHeight;
+        shotTime = Time.time;
+        Graphics.GetComponent<SpriteSorting>().SorterPositionOffset = new Vector3(0, -_bulletHeight);
     }
 
     public void Update()
@@ -97,7 +108,7 @@ public class Projectile : MonoBehaviour
 
     public void IAmAlive(int _damage, float _speed, Quaternion pattern, GameObject _shotBy)
     {
-        bulletSet(null, _damage, _speed, lifeTime, true, _shotBy);
+        bulletSet(null, _damage, _speed, pattern * Vector2.right, lifeTime, true, _shotBy, 0);
 
         // Temp is the spawned in bullet 
         // Spawned from patterns script
@@ -110,7 +121,7 @@ public class Projectile : MonoBehaviour
         pattern.y = 0;
         pattern.x = pattern.x;
         */
-        transform.localRotation = pattern;
+        //transform.localRotation = pattern;
 
         //lifeTimeReset = lifeTime;
     }
@@ -120,7 +131,8 @@ public class Projectile : MonoBehaviour
         // Moves bullet forward in the direction of the blue arrow
         if (gameObject != null)
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            transform.Translate(MoveDir * speed * Time.deltaTime);
+            Graphics.transform.localPosition = new Vector3(0, Mathf.Lerp(bulletHeight, 0, Time.time - shotTime), 0);
         }
 
         // Lifetime countdown

@@ -224,7 +224,7 @@ MonoBehaviour:
   rend: {fileID: 8343408306663701675}
   isPlayerClose: 0
   anim: {fileID: 8343408306663701685}
-  CactiProjectile: {fileID: 4996672021122051325, guid: 5149094c2e991f04e9fb2336c62296c9, type: 3}
+  CactiProjectile: {fileID: 3769123169295437976, guid: 9e0cef4a7bf564a41a82c3640abd7238, type: 3}
   projectileDamage: 10
   projectileSpeed: 10
   projectileLife: 3

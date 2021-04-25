@@ -13,9 +13,6 @@ public class SpriteSortingManager : MonoBehaviour
 {
     public List<SpriteSorting> Sprites = new List<SpriteSorting>();
 
-    private float timer;
-    public uint UpdateMs = 50;
-
     public static SpriteSortingManager Instance;
 
     private void Awake()
@@ -32,22 +29,18 @@ public class SpriteSortingManager : MonoBehaviour
 
     private void Update()
     {
-        timer -= Time.deltaTime * 1000;
-        if (timer <= 0)
+        for (int i = 0; i < Sprites.Count; i++)
         {
-            for (int i = 0; i < Sprites.Count; i++)
+            foreach (var r in Sprites[i].renderers)
             {
-                foreach (var r in Sprites[i].renderers)
+                if (r)
                 {
-                    if (r)
-                    {
-                        r.sortingOrder = i;
-                    }
+                    r.sortingOrder = i;
                 }
             }
-
-            Sprites.Sort((s1, s2) => s2.SortingPoint.y.CompareTo(s1.SortingPoint.y));
         }
+
+        Sprites.Sort((s1, s2) => s2.SortingPoint.y.CompareTo(s1.SortingPoint.y));
     }
 
     public void UpdateSorting()

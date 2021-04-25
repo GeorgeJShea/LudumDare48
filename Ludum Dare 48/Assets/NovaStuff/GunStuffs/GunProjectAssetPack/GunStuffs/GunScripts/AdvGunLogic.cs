@@ -20,7 +20,7 @@ public class AdvGunLogic : Item
     public float triggerDelay;
     private float triggerDelayReset;
 
-    [Tooltip("Time how long it takes to reload the gun")] 
+    [Tooltip("Time how long it takes to reload the gun")]
     public float reloadTime;
 
     [Header("")]
@@ -114,7 +114,7 @@ public class AdvGunLogic : Item
         {
             triggerDelay -= Time.deltaTime;
         }
-        
+
         // Prevents bursting when not time.
         if (bullets >= 0 && lagTime < 0 && burstBool == true)
         {
@@ -124,7 +124,7 @@ public class AdvGunLogic : Item
         {
             lagTime -= Time.deltaTime;
         }
-        
+
         //Reloads gun if less then required clip will fill with what remains
         Reload();
     }
@@ -140,7 +140,7 @@ public class AdvGunLogic : Item
 
     public void Burst()
     {
-        if(lagTimeReset < .1 && toFast == true)
+        if (lagTimeReset < .1 && toFast == true)
         {
             Shoot();
 
@@ -154,11 +154,11 @@ public class AdvGunLogic : Item
 
         //Bullet pooling
         GameObject bul = BulletPooling.bulletPoolInstance.GetBullet();
-        bul.transform.position = transform.position;
-        bul.transform.rotation = bulletDev;
+        bul.transform.position = new Vector3(transform.position.x, transform.parent.position.y);
+        //bul.transform.rotation = bulletDev;
         bul.SetActive(true);
 
-        bul.GetComponent<Projectile>().bulletSet(bulletNoise, damage, speed, bulletLife, false, transform.root.gameObject);
+        bul.GetComponent<Projectile>().bulletSet(bulletNoise, damage, speed, bulletDev * Vector2.right, bulletLife, false, transform.root.gameObject, transform.localPosition.y);
 
         // Used to make sure that a ton of particles dont spawn
         if (lagTimeReset >= .1 && toFast == true)
@@ -235,7 +235,7 @@ public class AdvGunLogic : Item
 
             triggerDelay = reloadTime;
         }
-        
+
     }
     /*
         simply adds ammo to gun
