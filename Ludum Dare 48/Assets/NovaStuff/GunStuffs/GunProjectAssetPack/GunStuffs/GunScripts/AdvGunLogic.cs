@@ -64,8 +64,7 @@ public class AdvGunLogic : Item
     [Header("               BULLET SETTINGS")]
     [Header("")]
 
-    [Tooltip("Put bullet here")]
-    public GameObject bullet;
+    public BulletPooling BulletPool;
     [Tooltip("Gun noise")]
     public AudioSource gunNoise;
     [Tooltip("Bullet noise")]
@@ -154,7 +153,7 @@ public class AdvGunLogic : Item
         Quaternion bulletDev = Quaternion.Euler(new Vector3(0, 0, angle));
 
         //Bullet pooling
-        GameObject bul = BulletPooling.bulletPoolInstance.GetBullet();
+        GameObject bul = BulletPool.GetBullet();
         bul.transform.position = new Vector3(transform.position.x, transform.parent.position.y);
         //bul.transform.rotation = bulletDev;
         bul.SetActive(true);
