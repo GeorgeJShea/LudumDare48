@@ -59,7 +59,11 @@ public class Projectile : MonoBehaviour
         Graphics.transform.localPosition = new Vector3(0, _bulletHeight);
         bulletHeight = _bulletHeight;
         shotTime = Time.time;
-        Graphics.transform.right = _dir;
+        //Graphics.transform.right = _dir;
+
+        float angle = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
+        Graphics.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
         Graphics.GetComponent<SpriteSorting>().SorterPositionOffset = new Vector3(0, -_bulletHeight);
     }
 

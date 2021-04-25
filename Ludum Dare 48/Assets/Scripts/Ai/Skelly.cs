@@ -3,43 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Ai : Character
+public class Skelly : Ai
 {
-    public Transform AiObjects;
-    public NavMeshAgent Agent;
-    [HideInInspector] public Transform Movement;
-    public Area PatrolArea;
+    public GameObject BoneProjectile;
 
-    public Vector2 WaitTimer = new Vector2(1, 2);
-    protected float waitTimer = 1;
-    [HideInInspector] public Transform CurrentWaypoint;
+    public float projectileDamage = 10;
+    public float projectileSpeed = 5;
+    public float projectileLife = 3;
 
-    public float AttackRange = 1;
-    public float AttackDamage = 5;
+    public Transform ThrowPos;
 
-    public bool isPlayerClose;
-    public Animator anim;
-    public bool isAttacking;
-
-    public Vector2 GraphicsOffset;
-
-    protected float playerRange = 6;
-
-    public override void Awake()
-    {
-        base.Awake();
-        Movement = Agent.transform;
-    }
-
-    public override void Damage(float damage)
-    {
-        base.Damage(damage);
-
-        isPlayerClose = true;
-        playerRange = 30;
-    }
-
-    protected virtual void Update()
+    protected override void Update()
     {
         AiObjects.transform.position = Movement.position + (Vector3)GraphicsOffset;
 
@@ -63,8 +37,14 @@ public class Ai : Character
                     float pathLength = GetPathLength(path);
                     if (path.status != NavMeshPathStatus.PathInvalid && pathLength < playerRange)
                     {
-                        if (pathLength < 1)
+                        Vector3 throwPos = new Vector3(ThrowPos.localPosition.x * Mathf.Sign(anim.GetFloat("X")), ThrowPos.localPosition.y);
+                        throwPos = transform.TransformPoint(throwPos);
+
+                        if (isPlayerClose && !CheckWallBetween(Player.instance, throwPos) && pathLength < AttackRange)
                         {
+                            Vector3 playerDir = Player.instance.transform.position - transform.position;
+                            playerDir = playerDir.normalized;
+                            anim.SetFloat("X", playerDir.x);
                             anim.Play("Attack");
                             Agent.isStopped = true;
                         }
@@ -75,14 +55,14 @@ public class Ai : Character
                     }
                     else
                     {
-                        playerRange = 6;
+                        playerRange = 10;
                     }
                 }
 
             }
             else
             {
-                playerRange = 6;
+                playerRange = 10;
 
                 if (PatrolArea == null) return;
 
@@ -114,38 +94,24 @@ public class Ai : Character
         }
     }
 
-    public void SetDestination(Vector3 dest)
-    {
-        Agent.isStopped = false;
-        Agent.SetDestination(dest);
-    }
-
-    public override Vector3 GetPosition()
-    {
-        return Movement.position;
-    }
-
     public override void AnimEvent()
     {
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
-            Player.instance.MovePlayer(this);
-            Player.instance.Damage(AttackDamage);
+            GameObject temp = Instantiate(BoneProjectile);
+            Vector3 throwPos = Movement.position + new Vector3(ThrowPos.localPosition.x * Mathf.Sign(anim.GetFloat("X")), 0);
+            temp.transform.localPosition = throwPos;
+
+            //throwPos.y = 0;
+
+
+            Vector3 playerDir = ShootPrediction.FirstOrderIntercept(throwPos, Vector2.zero, projectileSpeed, Player.instance.transform.position, Player.instance.rb.velocity) - throwPos;
+            playerDir = playerDir.normalized;
+
+            //temp.transform.right = playerDir;
+            temp.GetComponent<Projectile>().bulletSet(null, projectileDamage, projectileSpeed, playerDir, projectileLife, true, gameObject, Mathf.Abs(ThrowPos.position.y - Movement.position.y));
+
+            anim.SetFloat("X", playerDir.x);
         }
-    }
-
-    public static float GetPathLength(NavMeshPath path)
-    {
-        float lng = 0.0f;
-
-        if ((path.status != NavMeshPathStatus.PathInvalid) && (path.corners.Length > 1))
-        {
-            for (int i = 1; i < path.corners.Length; ++i)
-            {
-                lng += Vector3.Distance(path.corners[i - 1], path.corners[i]);
-            }
-        }
-
-        return lng;
     }
 }
