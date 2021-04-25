@@ -7,6 +7,13 @@ public class Snake : Ai
     public float JumpSpeed;
     public bool Move;
 
+    public override void Awake()
+    {
+        base.Awake();
+
+        anim.speed = Random.Range(0.9f, 1.1f);
+    }
+
     protected override void Update()
     {
         base.Update();
