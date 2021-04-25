@@ -1417,6 +1417,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4909153024178974834, guid: d40018e68a65fae4cb101f77ef6a10c3, type: 3}
+      propertyPath: weaponHotbar
+      value: 
+      objectReference: {fileID: 268751032}
     - target: {fileID: 4909153024178974836, guid: d40018e68a65fae4cb101f77ef6a10c3, type: 3}
       propertyPath: m_Size.x
       value: 1.4933543

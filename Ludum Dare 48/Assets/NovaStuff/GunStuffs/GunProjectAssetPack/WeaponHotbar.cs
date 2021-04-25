@@ -8,13 +8,6 @@ public class WeaponHotbar : MonoBehaviour
     public GameObject weaponTwo;
     public GameObject weaponThree;
 
-    void Start()
-    {
-        weaponOne.active = true;
-        weaponTwo.active = false;
-        weaponThree.active = false;
-    }
-
     // Update is called once per frame
     void Update()
     {

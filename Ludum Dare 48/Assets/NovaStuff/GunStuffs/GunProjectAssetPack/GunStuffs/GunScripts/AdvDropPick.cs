@@ -15,8 +15,10 @@ public class AdvDropPick : MonoBehaviour
     private bool handsFull = false;      // used to prevant picking up multiple guns
     private GunDropAni GDA;
 
+    public WeaponHotbar weaponHotbar;
     void Start()
     {
+        weaponHotbar = gameObject.GetComponent<WeaponHotbar>();
         handsFull = Hands.handsfull;        //Hands script used to keep track of wether hands are full
     }
 
@@ -35,6 +37,9 @@ public class AdvDropPick : MonoBehaviour
         if (col.tag == "gun")
         {
             Pick(col);
+            weaponHotbar.weaponOne.active = true;
+            weaponHotbar.weaponTwo.active = false;
+            weaponHotbar.weaponThree.active = false;
         }
     }
 
