@@ -45,7 +45,7 @@ public class AdvDropPick : MonoBehaviour
 
         //Disables gun from following/shooting
         gun.GetComponent<GunRotation>().enabled = false;
-        gun.GetComponent<AdvGunLogic>().enabled = false;
+        //gun.GetComponent<AdvGunLogic>().enabled = false;
 
         gun.GetComponent<SpriteRenderer>().sortingLayerName = "Moving";
 
@@ -70,7 +70,10 @@ public class AdvDropPick : MonoBehaviour
 
         //  Turns on gun
         col.GetComponent<GunRotation>().enabled = true;
-        col.GetComponent<AdvGunLogic>().enabled = true;
+
+        Item _item = col.GetComponent<Item>();
+        if (_item) _item.enabled = true;
+        //col.GetComponent<AdvGunLogic>().enabled = true;
 
         weaponHotbar.AddWeapon(col.gameObject);
     }

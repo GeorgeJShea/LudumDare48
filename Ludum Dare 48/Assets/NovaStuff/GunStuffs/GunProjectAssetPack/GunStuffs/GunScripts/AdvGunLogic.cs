@@ -11,7 +11,7 @@ Updated on 28/9/2020
 
 using UnityEngine;
 
-public class AdvGunLogic : MonoBehaviour
+public class AdvGunLogic : Item
 {
     [Header("               GUN SETTINGS")]
     [Header("                   GENERIC WEAPON SYSTEM")]
