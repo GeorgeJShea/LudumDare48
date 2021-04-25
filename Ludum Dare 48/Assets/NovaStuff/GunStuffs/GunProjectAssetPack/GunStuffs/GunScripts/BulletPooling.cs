@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class BulletPooling : MonoBehaviour
 {
-    public static BulletPooling bulletPoolInstance;
-
     public GameObject pooledBullets;
     private bool notEnoughBullet = true;
 
     private List<GameObject> bullets;
-
-    // Start is called before the first frame update
-    void Awake()
-    {
-        bulletPoolInstance = this;
-    }
 
     private void Start()
     {
