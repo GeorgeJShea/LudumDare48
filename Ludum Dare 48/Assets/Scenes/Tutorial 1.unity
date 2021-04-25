@@ -2050,6 +2050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b987cc7edb5a82b46933005e664f7941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  freezeInput: 0
   speed: 5
 --- !u!61 &190804019
 BoxCollider2D:
@@ -2113,6 +2114,11 @@ MonoBehaviour:
   StartHealth: 100
   rend: {fileID: 1129058508}
   anim: {fileID: 1129058505}
+  WeaponsHolder: {fileID: 0}
+  Hands: {fileID: 0}
+  Movement: {fileID: 0}
+  isDead: 0
+  rb: {fileID: 0}
 --- !u!4 &190804022
 Transform:
   m_ObjectHideFlags: 0
@@ -2172,9 +2178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
 --- !u!4 &225441983
 Transform:
   m_ObjectHideFlags: 0
@@ -2608,7 +2611,6 @@ GameObject:
   - component: {fileID: 628187214}
   - component: {fileID: 628187213}
   - component: {fileID: 628187212}
-  - component: {fileID: 628187211}
   - component: {fileID: 628187210}
   m_Layer: 0
   m_Name: Main Camera
@@ -2631,26 +2633,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 190804022}
   cam: {fileID: 628187214}
---- !u!114 &628187211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628187209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AssetsPPU: 32
-  m_RefResolutionX: 640
-  m_RefResolutionY: 360
-  m_UpscaleRT: 0
-  m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
 --- !u!114 &628187212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2742,7 +2724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628187209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.741562, y: 4.164609, z: -5}
+  m_LocalPosition: {x: -8.396537, y: 4.587857, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
