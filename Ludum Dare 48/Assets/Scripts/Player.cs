@@ -9,7 +9,10 @@ public class Player : Character
     public GameObject Hands;
     public PlayerMovement Movement;
 
-    [HideInInspector]public Rigidbody2D rb;
+    public Flamethrower Flamethrower;
+    public AdvGunLogic Shotgun;
+
+    [HideInInspector] public Rigidbody2D rb;
 
     public static Player instance
     {
@@ -36,6 +39,16 @@ public class Player : Character
 
         rb = GetComponent<Rigidbody2D>();
     }
+
+    public void PickupSnakeOil(float amount)
+    {
+        Flamethrower.ammoPool += amount;
+    }
+    public void PickupShotgunAmmo(float amount)
+    {
+        Shotgun.ammoPool += amount;
+    }
+
 
     private void Update()
     {

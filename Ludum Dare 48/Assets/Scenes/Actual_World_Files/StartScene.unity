@@ -924,6 +924,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 609140551563424551, guid: 553df57657bf391419dc730ad7c8c309, type: 3}
   m_PrefabInstance: {fileID: 490376852}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &490376857 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2689050575812824405, guid: 553df57657bf391419dc730ad7c8c309, type: 3}
+  m_PrefabInstance: {fileID: 490376852}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490376854}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a86a0b449118ff54a93b68a1154da2cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &880529388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1060,7 +1071,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987382854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.8896, y: 2.0995364, z: -5}
+  m_LocalPosition: {x: 5.907774, y: 2.0821464, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1373,6 +1384,8 @@ MonoBehaviour:
   WeaponsHolder: {fileID: 1202002088}
   Hands: {fileID: 1889725047}
   Movement: {fileID: 1238654185}
+  FlamethrowerAmmo: {fileID: 490376857}
+  ShotgunAmmo: {fileID: 2017579339}
   rb: {fileID: 0}
 --- !u!114 &1238654185
 MonoBehaviour:
@@ -1822,3 +1835,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2042660509755404612, guid: e44d5ce54e33c0c4fb2ecc3fe836f38a, type: 3}
   m_PrefabInstance: {fileID: 2017579334}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2017579339 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2042660509755404613, guid: e44d5ce54e33c0c4fb2ecc3fe836f38a, type: 3}
+  m_PrefabInstance: {fileID: 2017579334}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017579336}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ff2e82b13749f41af84849eaa350f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
