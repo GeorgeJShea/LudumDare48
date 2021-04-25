@@ -16,6 +16,8 @@ public class Snake : Ai
 
     protected override void Update()
     {
+        if (isDead) return;
+
         base.Update();
 
         if (isAttacking)

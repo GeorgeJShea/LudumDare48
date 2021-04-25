@@ -15,6 +15,8 @@ public class Skelly : Ai
 
     protected override void Update()
     {
+        if (isDead) return;
+
         AiObjects.transform.position = Movement.position + (Vector3)GraphicsOffset;
 
         isAttacking = anim.GetCurrentAnimatorStateInfo(0).IsName("Attack");

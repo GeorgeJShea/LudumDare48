@@ -39,8 +39,32 @@ public class Ai : Character
         playerRange = 30;
     }
 
+    public override void Die()
+    {
+        if (isDead) return;
+        StartCoroutine(IDie());
+        //transform.position = LevelManager.instance.SpawnPoint.position;
+        //health = StartHealth;
+        //gameObject.SetActive(false);
+    }
+
+    public IEnumerator IDie()
+    {
+        isDead = true;
+
+        anim.Play("Death", 0, 0);
+
+        Destroy(Agent);
+
+        yield return new WaitForSeconds(2);
+
+        Destroy(gameObject);
+    }
+
     protected virtual void Update()
     {
+        if (isDead) return;
+
         AiObjects.transform.position = Movement.position + (Vector3)GraphicsOffset;
 
         isAttacking = anim.GetCurrentAnimatorStateInfo(0).IsName("Attack");

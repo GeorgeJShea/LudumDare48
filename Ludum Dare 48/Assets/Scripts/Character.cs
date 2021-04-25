@@ -5,7 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour, IHitable
 {
     public float StartHealth = 100;
-
+    public bool isDead;
     public Renderer rend;
 
     public float Health { get { return health; } set { health = value; } }

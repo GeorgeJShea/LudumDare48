@@ -38,9 +38,9 @@ public class Cacti : Character
 
     public override void Damage(float damage)
     {
+        if (isDead) return;
+
         base.Damage(damage);
-
-
     }
 
     public override void MoveCharacter(Vector3 by)

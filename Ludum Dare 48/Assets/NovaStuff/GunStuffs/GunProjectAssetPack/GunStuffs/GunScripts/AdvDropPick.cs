@@ -23,7 +23,6 @@ public class AdvDropPick : MonoBehaviour
 
         foreach (var g in WeaponsToPickUp)
         {
-            print(g);
             Pick(g);
         }
 

@@ -9,8 +9,6 @@ public class Player : Character
     public GameObject Hands;
     public PlayerMovement Movement;
 
-    public bool isDead;
-
     [HideInInspector]public Rigidbody2D rb;
 
     public static Player instance
