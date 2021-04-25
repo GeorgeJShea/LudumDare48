@@ -24,12 +24,9 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(ILoadNextLevel());
     }
 
-    private void Update()
+    public void LoadNextLevel()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(ILoadNextLevel());
-        }
+        StartCoroutine(ILoadNextLevel());
     }
 
     public IEnumerator ILoadNextLevel()
