@@ -17,7 +17,7 @@ public class Transition : MonoBehaviour
     public IEnumerator FadeImage(int nextSceneToLoad, bool died)
     {
         //Sets up scene
-        nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
+        nextSceneToLoad = SceneManager.GetActiveScene().buildIndex;
         // Grabs fade object infront of camera. 
         GameObject screenFade = GameObject.Find("ScreenFade");
 

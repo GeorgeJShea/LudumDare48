@@ -223,3 +223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6857cfb8bc75a924ba6b186e39c93649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screenFade: {fileID: 6253536918707781129}
+  nextLevel: 0
+  died: 0
