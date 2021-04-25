@@ -11,7 +11,7 @@ public class Player : Character
 
     public bool isDead;
 
-    private Rigidbody2D rb;
+    [HideInInspector]public Rigidbody2D rb;
 
     public static Player instance
     {
