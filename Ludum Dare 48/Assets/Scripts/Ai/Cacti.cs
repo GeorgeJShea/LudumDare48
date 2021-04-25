@@ -23,7 +23,9 @@ public class Cacti : Character
 
         if (!isAttacking)
         {
-            if (isPlayerClose && !CheckWallBetween())
+            Vector3 throwPos = new Vector3(ThrowPos.localPosition.x * Mathf.Sign(anim.GetFloat("X")), ThrowPos.localPosition.y);
+
+            if (isPlayerClose && !CheckWallBetween(Player.instance, throwPos))
             {
                 Vector3 playerDir = Player.instance.transform.position - transform.position;
                 playerDir = playerDir.normalized;
@@ -31,15 +33,6 @@ public class Cacti : Character
                 anim.Play("Attack");
             }
         }
-    }
-
-    public bool CheckWallBetween()
-    {
-        Vector3 throwPos = new Vector3(ThrowPos.localPosition.x * Mathf.Sign(anim.GetFloat("X")), ThrowPos.localPosition.y);
-
-        Vector2 toCheckDir = Player.instance.transform.position - throwPos;
-        RaycastHit2D hit = Physics2D.Raycast(throwPos, toCheckDir, Vector2.Distance(throwPos, Player.instance.transform.position), LayerMask.GetMask("wall"));
-        return hit.collider;
     }
 
     public override void Damage(float damage)

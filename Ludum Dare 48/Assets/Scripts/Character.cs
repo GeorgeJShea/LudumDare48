@@ -38,6 +38,13 @@ public class Character : MonoBehaviour, IHitable
         Destroy(gameObject);
     }
 
+    public bool CheckWallBetween(Character toCheck, Vector3 fromPos)
+    {
+        Vector2 toCheckDir = toCheck.transform.position - fromPos;
+        RaycastHit2D hit = Physics2D.Raycast(fromPos, toCheckDir, Vector2.Distance(fromPos, toCheck.transform.position), LayerMask.GetMask("wall"));
+        return hit.collider;
+    }
+
     public virtual void Hit(Projectile projectile, out bool destroy)
     {
         projectile.gameObject.transform.parent = null;
