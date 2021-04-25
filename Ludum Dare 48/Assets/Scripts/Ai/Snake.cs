@@ -23,7 +23,7 @@ public class Snake : Ai
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Movement"))
         {
             Move = !Move;
-            Agent.speed = Move ? JumpSpeed : 0;
+            Agent.speed = Move ? JumpSpeed : 0.01f;
         }
     }
 }
