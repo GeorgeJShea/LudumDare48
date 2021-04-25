@@ -394,6 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartHealth: 100
+  isDead: 0
   rend: {fileID: 8644931162984618141}
   AiObjects: {fileID: 8644931162984618142}
   Agent: {fileID: 8644931164086144439}
@@ -409,6 +410,6 @@ MonoBehaviour:
   GraphicsOffset: {x: 0, y: 1}
   BoneProjectile: {fileID: 3769123169295437976, guid: 6af39740b3addf74fb93852394931369, type: 3}
   projectileDamage: 10
-  projectileSpeed: 5
+  projectileSpeed: 7.5
   projectileLife: 3
   ThrowPos: {fileID: 1855287583}

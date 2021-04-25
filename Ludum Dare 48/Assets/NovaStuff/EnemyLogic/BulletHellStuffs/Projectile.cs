@@ -24,6 +24,9 @@ public class Projectile : MonoBehaviour
     [HideInInspector] public GameObject shotBy;
     [HideInInspector] public bool flames;
 
+    public bool Rotate;
+    public float RotationSpeed = 5;
+
     [HideInInspector] public Vector3 MoveDir;
     private float bulletHeight;
     private float shotTime;
@@ -138,6 +141,7 @@ public class Projectile : MonoBehaviour
         {
             transform.Translate(MoveDir * speed * Time.deltaTime);
             Graphics.transform.localPosition = new Vector3(0, Mathf.Lerp(bulletHeight, 0, Time.time - shotTime), 0);
+            if (Rotate) Graphics.transform.Rotate(new Vector3(0, 0, RotationSpeed * Time.deltaTime));
         }
 
         // Lifetime countdown
