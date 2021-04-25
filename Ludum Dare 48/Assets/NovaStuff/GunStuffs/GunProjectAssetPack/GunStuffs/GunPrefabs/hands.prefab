@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4909153024178974832}
   - component: {fileID: 4909153024178974834}
-  - component: {fileID: 4909153024178974835}
   - component: {fileID: 4909153024178974833}
   - component: {fileID: 4909153024178974836}
-  m_Layer: 0
+  - component: {fileID: 268751032}
+  m_Layer: 14
   m_Name: hands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4909153024178974847}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.256, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -41,25 +41,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4909153024178974847}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e770e6be74777247bf273433d84860b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dropWeapon: 113
   pickWeapon: 101
---- !u!114 &4909153024178974835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4909153024178974847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a06dfca85f82b3b468847e49903a7aa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  gun: {fileID: 0}
+  weaponHotbar: {fileID: 268751032}
 --- !u!114 &4909153024178974833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,10 +72,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.25246006, y: -0.006159}
+  m_Offset: {x: -0.22962332, y: -0.006159067}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -96,5 +86,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3226682, y: 0.32251412}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &268751032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4909153024178974847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c58720313cdc7c4e965d761de8bf588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Weapons: []
+  currentWeapon: 0
+  DropPick: {fileID: 4909153024178974834}

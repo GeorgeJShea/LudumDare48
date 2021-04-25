@@ -10,36 +10,28 @@ public class AdvDropPick : MonoBehaviour
     public KeyCode dropWeapon = KeyCode.Q;
     public KeyCode pickWeapon = KeyCode.E;
 
-    private GameObject gun;                // used for dropping the gun
-
-    private bool handsFull = false;      // used to prevant picking up multiple guns
-    private GunDropAni GDA;
+    [HideInInspector] public GameObject gun;                // used for dropping the gun
 
     public WeaponHotbar weaponHotbar;
     void Start()
     {
         weaponHotbar = gameObject.GetComponent<WeaponHotbar>();
-        handsFull = Hands.handsfull;        //Hands script used to keep track of wether hands are full
     }
 
     public void Update()
     {
-        //Drop
-        if (Input.GetKeyDown(dropWeapon) && Hands.handsfull == true)
+        // DON'T Drop
+        /*if (Input.GetKeyDown(dropWeapon) && Hands.handsfull == true)
         {
             Drop();
-
-        }
+        }*/
     }
     private void OnTriggerStay2D(Collider2D col)
     {
         // Picks Up Gun
-        if (col.tag == "gun")
+        if (col.tag == "gun" && Input.GetKey(pickWeapon))
         {
             Pick(col);
-            weaponHotbar.weaponOne.active = true;
-            weaponHotbar.weaponTwo.active = false;
-            weaponHotbar.weaponThree.active = false;
         }
     }
 
@@ -48,7 +40,6 @@ public class AdvDropPick : MonoBehaviour
         gun.gameObject.GetComponent<GunDropAni>().dropWeapon();
         gun.gameObject.GetComponent<GunDropAni>().droppedBool = true;
         // Drops gun hands are no longer full
-        Hands.handsfull = false;
         gun.transform.parent = null;
 
 
@@ -61,17 +52,12 @@ public class AdvDropPick : MonoBehaviour
         //Updates visuals including ui
         gun.transform.rotation = Quaternion.identity;
         GameObject.Find("UiManger").GetComponent<UiGun>().ammoClipSet(0, 0);
-
-
     }
 
     public void Pick(Collider2D col)
     {
         col.gameObject.GetComponent<GunDropAni>().pickWeapon();
         col.gameObject.GetComponent<GunDropAni>().droppedBool = false;
-
-        //Fills hands prevent picking up mutiple guns
-        Hands.handsfull = true;
 
         //Moves guns to hand and makes child of player
         col.transform.position = transform.position;
@@ -80,10 +66,12 @@ public class AdvDropPick : MonoBehaviour
         col.GetComponent<SpriteRenderer>().sortingLayerName = "Foreground";
 
         // Sets gun to what it collided with
-        gun = col.gameObject;
+        //gun = col.gameObject;
 
         //  Turns on gun
         col.GetComponent<GunRotation>().enabled = true;
         col.GetComponent<AdvGunLogic>().enabled = true;
+
+        weaponHotbar.AddWeapon(col.gameObject);
     }
 }

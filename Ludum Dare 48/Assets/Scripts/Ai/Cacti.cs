@@ -43,9 +43,10 @@ public class Cacti : Character
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
             GameObject temp = Instantiate(CactiProjectile, transform);
-            temp.transform.localPosition = new Vector3(ThrowPos.localPosition.x * Mathf.Sign(anim.GetFloat("X")), ThrowPos.localPosition.y);
+            Vector3 throwPos = new Vector3(ThrowPos.localPosition.x * Mathf.Sign(anim.GetFloat("X")), ThrowPos.localPosition.y);
+            temp.transform.localPosition = throwPos;
 
-            Vector3 playerDir = Player.instance.transform.position - transform.position;
+            Vector3 playerDir = Player.instance.transform.position - (transform.position + throwPos);
             playerDir = playerDir.normalized;
 
             temp.transform.right = playerDir;

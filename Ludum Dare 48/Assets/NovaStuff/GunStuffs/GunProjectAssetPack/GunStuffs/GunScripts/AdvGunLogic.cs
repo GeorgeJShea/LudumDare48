@@ -79,10 +79,6 @@ public class AdvGunLogic : MonoBehaviour
     [Tooltip("How long the bullet will remain on screen")]
     public float bulletLife;
 
-    [Header("")]
-    [Tooltip("Fire Affect")]
-    public bool flames = false;
-
     [HideInInspector]
     public UiGun uiComponent;    //Makes refrence to ui script
 

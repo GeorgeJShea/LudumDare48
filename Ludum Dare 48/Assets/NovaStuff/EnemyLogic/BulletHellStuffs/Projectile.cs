@@ -55,18 +55,15 @@ public class Projectile : MonoBehaviour
     {
         //Starts movement, also destroys and spawns in affects.
         BulletLogic();
-
-
-
     }
- 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         IHitable hitable = collision.GetComponentInParent<IHitable>();
 
         if (hitable != null)
         {
-            if(shotBy)
+            if (shotBy)
             {
                 if (collision.transform.IsChildOf(shotBy.transform))
                 {

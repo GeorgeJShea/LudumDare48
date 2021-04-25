@@ -184,13 +184,8 @@ MonoBehaviour:
   gunNoise: {fileID: 0}
   bulletNoise: {fileID: 0}
   damage: 5
-  speed: 7
+  speed: 14
   bulletLife: 4
-  pierceNumb: 0
-  explosive: 0
-  explosiveAffect: {fileID: 5398143623913548616, guid: 65eb1a67afacbc34bb4a35e3de1a95de, type: 3}
-  explosiveDamage: 0
-  explosiveRange: 0
   uiComponent: {fileID: 0}
 --- !u!114 &-1459795947788489136
 MonoBehaviour:
