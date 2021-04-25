@@ -5032,7 +5032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoPool: 100
   Trigger: {fileID: 1534701851}
-  damage: 50
+  damage: 100
   FlameEffect: {fileID: 1799871886}
   uiComponent: {fileID: 0}
 --- !u!114 &4435442453850855442
