@@ -193,7 +193,7 @@ public class AdvGunLogic : Item
     */
     public void Shoot()
     {
-        Instantiate(muzzleFlash, transform.GetChild(0).transform.position, Quaternion.identity);
+        Destroy(Instantiate(muzzleFlash, transform.GetChild(0).transform.position, Quaternion.identity), 1);
         if (gunNoise != null)
         {
             gunNoise.Play(0);

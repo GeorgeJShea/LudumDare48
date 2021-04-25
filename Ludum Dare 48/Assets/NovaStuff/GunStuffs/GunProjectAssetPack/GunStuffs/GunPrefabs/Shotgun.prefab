@@ -176,7 +176,7 @@ MonoBehaviour:
   clip: 4
   clipSize: 4
   ammoPool: 25
-  muzzleFlash: {fileID: 5398143623913548616, guid: 65eb1a67afacbc34bb4a35e3de1a95de, type: 3}
+  muzzleFlash: {fileID: 1112699458390963645, guid: 88fc8c9b16231cd4182ef4fe1c337896, type: 3}
   bullets: 15
   deviation: 15
   lagTime: 0.01
