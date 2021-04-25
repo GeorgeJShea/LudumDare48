@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84ff2e82b13749f41af84849eaa350f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDelay: 1
+  triggerDelay: 0.75
   reloadTime: 1
   costToShoot: 1
   clip: 4
@@ -186,6 +186,7 @@ MonoBehaviour:
   damage: 5
   speed: 14
   bulletLife: 4
+  isSemi: 0
   uiComponent: {fileID: 0}
 --- !u!114 &-1459795947788489136
 MonoBehaviour:

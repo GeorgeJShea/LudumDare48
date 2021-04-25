@@ -78,6 +78,7 @@ public class AdvGunLogic : Item
     public float speed;
     [Tooltip("How long the bullet will remain on screen")]
     public float bulletLife;
+    public bool isSemi;
 
     [HideInInspector]
     public UiGun uiComponent;    //Makes refrence to ui script
@@ -101,7 +102,7 @@ public class AdvGunLogic : Item
             // sets ui
             uiComponent.ammoClipSet(clip, ammoPool);
 
-            if (Input.GetKey(KeyCode.Mouse0) && clip - costToShoot >= 0)
+            if (isSemi ? Input.GetKeyDown(KeyCode.Mouse0) : Input.GetKey(KeyCode.Mouse0) && clip - costToShoot >= 0)
             {
                 // trigger delay ui
                 uiComponent.ReloadAni(triggerDelayReset);
