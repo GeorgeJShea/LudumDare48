@@ -49,6 +49,7 @@ MonoBehaviour:
   dropWeapon: 113
   pickWeapon: 101
   gun: {fileID: 0}
+  WeaponsParent: {fileID: 0}
   weaponHotbar: {fileID: 268751032}
 --- !u!114 &4909153024178974833
 MonoBehaviour:

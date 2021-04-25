@@ -12,7 +12,9 @@ public class AdvDropPick : MonoBehaviour
 
     [HideInInspector] public GameObject gun;                // used for dropping the gun
 
+    public Transform WeaponsParent;
     public WeaponHotbar weaponHotbar;
+
     void Start()
     {
         weaponHotbar = gameObject.GetComponent<WeaponHotbar>();
@@ -61,7 +63,7 @@ public class AdvDropPick : MonoBehaviour
 
         //Moves guns to hand and makes child of player
         col.transform.position = transform.position;
-        col.transform.parent = Player.instance.transform;
+        col.transform.parent = WeaponsParent;
 
         col.GetComponent<SpriteRenderer>().sortingLayerName = "Foreground";
 

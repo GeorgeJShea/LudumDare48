@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     private Vector2 moveVelocity;
 
+    public bool freezeInput;
+
     public float speed = 20.0f;
 
     void Start()
@@ -16,13 +18,23 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+        if (!freezeInput)
+        {
+            float moveX = Input.GetAxisRaw("Horizontal");
+            float moveY = Input.GetAxisRaw("Vertical");
 
-        moveVelocity = new Vector2(moveX, moveY).normalized;
+            moveVelocity = new Vector2(moveX, moveY).normalized;
+        }
     }
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveVelocity.x * speed, moveVelocity.y * speed);
+        if (!freezeInput)
+        {
+            rb.velocity = new Vector2(moveVelocity.x * speed, moveVelocity.y * speed);
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 }
