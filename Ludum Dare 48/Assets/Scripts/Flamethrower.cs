@@ -12,6 +12,8 @@ public class Flamethrower : Item
     [Tooltip("How much damage the bullet will do")]
     public float damage;
 
+    private float startedTime;
+
     public ParticleSystem FlameEffect;
 
     [HideInInspector]
@@ -27,6 +29,7 @@ public class Flamethrower : Item
         if (Input.GetMouseButtonDown(0))
         {
             FlameEffect.Play();
+            startedTime = Time.time;
         }
         if (Input.GetMouseButtonUp(0) || ammoPool <= 0)
         {
@@ -35,14 +38,17 @@ public class Flamethrower : Item
 
         if (Input.GetMouseButton(0) && ammoPool > 0)
         {
-            ammoPool -= Time.deltaTime;
-            for (int i = 0; i < Trigger.Enemies.Count; i++)
+            if ((Time.time - startedTime) > 0.25f)
             {
-                if (!CheckWallBetween(Trigger.Enemies[i], transform.position))
+                ammoPool -= Time.deltaTime;
+                for (int i = 0; i < Trigger.Enemies.Count; i++)
                 {
-                    if (Trigger.Enemies[i])
+                    if (!CheckWallBetween(Trigger.Enemies[i], transform.position))
                     {
-                        Trigger.Enemies[i].Damage(damage * Time.deltaTime);
+                        if (Trigger.Enemies[i])
+                        {
+                            Trigger.Enemies[i].Damage(damage * Time.deltaTime);
+                        }
                     }
                 }
             }
