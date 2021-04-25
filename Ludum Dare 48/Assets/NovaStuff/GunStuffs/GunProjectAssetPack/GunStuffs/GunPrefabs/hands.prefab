@@ -41,7 +41,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4909153024178974847}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e770e6be74777247bf273433d84860b, type: 3}
   m_Name: 
@@ -51,6 +51,10 @@ MonoBehaviour:
   gun: {fileID: 0}
   WeaponsParent: {fileID: 0}
   weaponHotbar: {fileID: 268751032}
+  WeaponsToPickUp:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &4909153024178974833
 MonoBehaviour:
   m_ObjectHideFlags: 0

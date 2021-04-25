@@ -15,9 +15,19 @@ public class AdvDropPick : MonoBehaviour
     public Transform WeaponsParent;
     public WeaponHotbar weaponHotbar;
 
+    public GameObject[] WeaponsToPickUp;
+
     void Start()
     {
         weaponHotbar = gameObject.GetComponent<WeaponHotbar>();
+
+        foreach (var g in WeaponsToPickUp)
+        {
+            print(g);
+            Pick(g);
+        }
+
+        weaponHotbar.HoldWeapon(0);
     }
 
     public void Update()
@@ -33,7 +43,7 @@ public class AdvDropPick : MonoBehaviour
         // Picks Up Gun
         if (col.tag == "gun" && Input.GetKey(pickWeapon))
         {
-            Pick(col);
+            Pick(col.gameObject);
         }
     }
 
@@ -56,27 +66,27 @@ public class AdvDropPick : MonoBehaviour
         GameObject.Find("UiManger").GetComponent<UiGun>().ammoClipSet(0, 0);
     }
 
-    public void Pick(Collider2D col)
+    public void Pick(GameObject item)
     {
-        col.gameObject.GetComponent<GunDropAni>().pickWeapon();
-        col.gameObject.GetComponent<GunDropAni>().droppedBool = false;
+        item.gameObject.GetComponent<GunDropAni>().pickWeapon();
+        item.gameObject.GetComponent<GunDropAni>().droppedBool = false;
 
         //Moves guns to hand and makes child of player
-        col.transform.position = transform.position;
-        col.transform.parent = WeaponsParent;
+        item.transform.position = transform.position;
+        item.transform.parent = WeaponsParent;
 
-        col.GetComponent<SpriteRenderer>().sortingLayerName = "Foreground";
+        item.GetComponent<SpriteRenderer>().sortingLayerName = "Foreground";
 
         // Sets gun to what it collided with
         //gun = col.gameObject;
 
         //  Turns on gun
-        col.GetComponent<GunRotation>().enabled = true;
+        item.GetComponent<GunRotation>().enabled = true;
 
-        Item _item = col.GetComponent<Item>();
+        Item _item = item.GetComponent<Item>();
         if (_item) _item.enabled = true;
         //col.GetComponent<AdvGunLogic>().enabled = true;
 
-        weaponHotbar.AddWeapon(col.gameObject);
+        weaponHotbar.AddWeapon(item.gameObject);
     }
 }
