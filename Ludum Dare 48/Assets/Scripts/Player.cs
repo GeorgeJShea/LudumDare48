@@ -46,7 +46,9 @@ public class Player : Character
 
     public override void Die()
     {
-        gameObject.SetActive(false);
+        transform.position = LevelManager.instance.SpawnPoint.position;
+        health = StartHealth;
+        //gameObject.SetActive(false);
     }
 
     public override void MoveCharacter(Vector3 by)
