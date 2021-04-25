@@ -45,13 +45,14 @@ public class LevelManager : MonoBehaviour
     public void AddNewLevelData(LevelData data)
     {
         Levels.Add(data);
+
+        SpawnPoint = data.SpawnPoint;
+
         if (Levels.Count > 1)
         {
             LevelData lastLevel = Levels[Levels.Count - 2];
 
             data.LevelContainer.position = (lastLevel.ExitPos.position - data.EntrancePos.position) + new Vector3(1, 0, 0);
-
-            SpawnPoint = data.SpawnPoint;
 
             GameObject temp = new GameObject("navmeshLink");
             temp.transform.position = (lastLevel.ExitPos.position + data.EntrancePos.position) / 2;
