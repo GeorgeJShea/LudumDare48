@@ -29,8 +29,6 @@ public class Transition : MonoBehaviour
             image.color = new Color(0, 0, 0, i);
             yield return null;
         }
-
-        Debug.Log("next scene tottaly loaded got o script when we actually have scenes");
        
         SceneManager.LoadScene(nextSceneToLoad);
     }
