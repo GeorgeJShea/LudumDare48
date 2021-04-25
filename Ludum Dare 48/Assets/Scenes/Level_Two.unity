@@ -12226,7 +12226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2edc496660e8f34eb44dbb966a4cf37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnPoint: {fileID: 0}
+  SpawnPoint: {fileID: 1524430917}
   EntrancePos: {fileID: 1755726909}
   ExitPos: {fileID: 1379998883}
   LevelContainer: {fileID: 1460279180}
@@ -16513,8 +16513,8 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -7, y: -3, z: 0}
-  m_Size: {x: 41, y: 45, z: 1}
+  m_Origin: {x: -6, y: -3, z: 0}
+  m_Size: {x: 40, y: 45, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -18321,7 +18321,7 @@ MonoBehaviour:
   m_UseGeometry: 0
   m_OverrideByGrid: 0
   m_UseMeshPrefab: {fileID: 0}
-  m_CompressBounds: 0
+  m_CompressBounds: 1
   m_OverrideVector: {x: 1, y: 1, z: 1}
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
