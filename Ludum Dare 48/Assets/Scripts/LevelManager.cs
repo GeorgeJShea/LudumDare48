@@ -52,7 +52,8 @@ public class LevelManager : MonoBehaviour
         {
             LevelData lastLevel = Levels[Levels.Count - 2];
 
-            data.LevelContainer.position = (lastLevel.ExitPos.position - data.EntrancePos.position) + new Vector3(1, 0, 0);
+            Vector3 toAdd = (lastLevel.ExitPos.position - data.EntrancePos.position);
+            data.LevelContainer.position = toAdd + new Vector3(Mathf.RoundToInt(toAdd.normalized.x), Mathf.RoundToInt(toAdd.normalized.y), 0);
 
             GameObject temp = new GameObject("navmeshLink");
             temp.transform.position = (lastLevel.ExitPos.position + data.EntrancePos.position) / 2;
