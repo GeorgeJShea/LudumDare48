@@ -42,10 +42,11 @@ public class Player : Character
         gameObject.SetActive(false);
     }
 
+    public override void MoveCharacter(Vector3 by)
+    {
+    }
+
     public void MovePlayer(Ai by)
     {
-        Vector3 characterDir = transform.position - by.Movement.position;
-        characterDir = characterDir.normalized;
-        transform.position += characterDir * 0.15f;
     }
 }
