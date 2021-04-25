@@ -226,7 +226,7 @@ MonoBehaviour:
   anim: {fileID: 8343408306663701685}
   CactiProjectile: {fileID: 4996672021122051325, guid: 5149094c2e991f04e9fb2336c62296c9, type: 3}
   projectileDamage: 10
-  projectileSpeed: 15
+  projectileSpeed: 10
   projectileLife: 3
   ThrowPos: {fileID: 6321000192738310922}
 --- !u!1 &8343408306663701684
