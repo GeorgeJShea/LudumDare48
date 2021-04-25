@@ -32,7 +32,7 @@ public class AdvDropPick : MonoBehaviour
     private void OnTriggerStay2D(Collider2D col)
     {
         // Picks Up Gun
-        if (col.tag == "gun" && Input.GetKey(pickWeapon) && Hands.handsfull == false)
+        if (col.tag == "gun")
         {
             Pick(col);
         }
