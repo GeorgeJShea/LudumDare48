@@ -79,7 +79,7 @@ public class Player : Character
         Hands.SetActive(false);
         WeaponsHolder.SetActive(false);
 
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
 
         anim.Play("Idle");
 

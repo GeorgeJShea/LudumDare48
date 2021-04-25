@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class Flamethrower : Item
 {
@@ -14,14 +15,21 @@ public class Flamethrower : Item
 
     private float startedTime;
 
+    public Light2D light;
+
     public ParticleSystem FlameEffect;
 
     [HideInInspector]
     public UiGun uiComponent;    //Makes refrence to ui script
 
+    private float initialLightIntensity;
+    private float lastLightIntesity;
+
     void Start()
     {
         uiComponent = GameObject.Find("UiManger").GetComponent<UiGun>();
+
+        initialLightIntensity = light.intensity;
     }
 
     public void Update()
@@ -29,15 +37,21 @@ public class Flamethrower : Item
         if (Input.GetMouseButtonDown(0))
         {
             FlameEffect.Play();
+            light.enabled = true;
             startedTime = Time.time;
+            lastLightIntesity = light.intensity;
         }
         if (Input.GetMouseButtonUp(0) || ammoPool <= 0)
         {
             FlameEffect.Stop();
+            startedTime = Time.time;
         }
 
         if (Input.GetMouseButton(0) && ammoPool > 0)
         {
+            light.intensity = Mathf.Lerp(lastLightIntesity, initialLightIntensity * Random.Range(0.9f, 1.1f), Time.time - startedTime);
+            lastLightIntesity = light.intensity;
+
             if ((Time.time - startedTime) > 0.25f)
             {
                 ammoPool -= Time.deltaTime;
@@ -51,6 +65,14 @@ public class Flamethrower : Item
                         }
                     }
                 }
+            }
+        }
+        else
+        {
+            light.intensity = Mathf.Lerp(lastLightIntesity, 0, Time.time - startedTime);
+            if (light.intensity == 0 && light.gameObject.activeInHierarchy)
+            {
+                light.enabled = false;
             }
         }
 
