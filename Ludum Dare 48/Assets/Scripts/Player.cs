@@ -37,6 +37,13 @@ public class Player : Character
         anim.SetBool("IsMoving", rb.velocity.sqrMagnitude != 0);
     }
 
+    public override void Damage(float damage)
+    {
+        base.Damage(damage);
+
+        anim.Play("Hurt", 0, 0);
+    }
+
     public override void Die()
     {
         gameObject.SetActive(false);
