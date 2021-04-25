@@ -59,6 +59,7 @@ public class Projectile : MonoBehaviour
         Graphics.transform.localPosition = new Vector3(0, _bulletHeight);
         bulletHeight = _bulletHeight;
         shotTime = Time.time;
+        Graphics.transform.right = _dir;
         Graphics.GetComponent<SpriteSorting>().SorterPositionOffset = new Vector3(0, -_bulletHeight);
     }
 
