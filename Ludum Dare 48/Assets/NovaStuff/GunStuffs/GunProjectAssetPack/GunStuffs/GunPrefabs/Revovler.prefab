@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84ff2e82b13749f41af84849eaa350f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDelay: 0.1
+  triggerDelay: 0.5
   reloadTime: 0.1
   costToShoot: 1
   clip: 8
@@ -183,7 +183,7 @@ MonoBehaviour:
   bullet: {fileID: 4996672021122051325, guid: 1118a6cfc4236f145b429c37f445e3d3, type: 3}
   gunNoise: {fileID: 0}
   bulletNoise: {fileID: 0}
-  damage: 6
+  damage: 34
   speed: 20
   bulletLife: 1
   isSemi: 1
