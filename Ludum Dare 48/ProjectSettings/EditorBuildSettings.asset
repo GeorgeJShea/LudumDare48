@@ -18,8 +18,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Actual_World_Files/Level_Two.unity
     guid: 170550747b0417b41976dc65c592dd5c
   - enabled: 1
+    path: Assets/Scenes/Actual_World_Files/Level_Three.unity
+    guid: e1ab497c3c58feb40b114395763b3548
+  - enabled: 1
     path: Assets/Scenes/Actual_World_Files/Level_Four.unity
     guid: 5be10a7f9ed884042b83dfaad79ef512
+  - enabled: 1
+    path: Assets/Scenes/Actual_World_Files/BossRoom.unity
+    guid: 80f0e5ed9ec159c48a12f764f5cc88c0
   - enabled: 1
     path: Assets/Scenes/TestLevel 1.unity
     guid: dd35bd61caf9db442b15a29c3fa07abe
