@@ -9,16 +9,16 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 6e8e247e0e457af42a9b9e2e5126a6fe
   - enabled: 1
-    path: Assets/Scenes/StartScene.unity
+    path: Assets/Scenes/Actual_World_Files/StartScene.unity
     guid: a0fae021980e87e4db3228c1ea5e8d26
   - enabled: 1
-    path: Assets/Scenes/Level_One.unity
+    path: Assets/Scenes/Actual_World_Files/True_Tutroiral.unity
     guid: 24b6bba74c274b642b881d4849357dd2
   - enabled: 1
-    path: Assets/Scenes/Level_Two.unity
+    path: Assets/Scenes/Actual_World_Files/Level_Two.unity
     guid: 170550747b0417b41976dc65c592dd5c
   - enabled: 1
-    path: Assets/Scenes/Level_Three.unity
+    path: Assets/Scenes/Actual_World_Files/Level_Four.unity
     guid: 5be10a7f9ed884042b83dfaad79ef512
   - enabled: 1
     path: Assets/Scenes/TestLevel 1.unity

@@ -12382,14 +12382,14 @@ Transform:
   - {fileID: 1464627520}
   - {fileID: 760522354}
   - {fileID: 372495319}
+  - {fileID: 182044537}
   - {fileID: 1521660594}
   - {fileID: 619273476}
   - {fileID: 462982652}
+  - {fileID: 1987783938}
   - {fileID: 1420052466}
   - {fileID: 1884160063}
   - {fileID: 592223834}
-  - {fileID: 1987783938}
-  - {fileID: 182044537}
   - {fileID: 917465013}
   m_Father: {fileID: 1460279180}
   m_RootOrder: 3
@@ -16295,7 +16295,7 @@ MonoBehaviour:
   m_VoxelSize: 0.033333335
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 7ae7783adfcf5c840986add9a1cd332b, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!4 &1869927515
 Transform:
   m_ObjectHideFlags: 0
