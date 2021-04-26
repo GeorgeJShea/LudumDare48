@@ -64,37 +64,6 @@ public class Skelly : Ai
                 }
 
             }
-            else
-            {
-                playerRange = 12.5f;
-
-                if (PatrolArea == null) return;
-
-                if (!CurrentWaypoint)
-                {
-                    waitTimer = Random.Range(WaitTimer.x, WaitTimer.y);
-                    CurrentWaypoint = PatrolArea.GetWaypoint();
-                }
-
-                if (CurrentWaypoint)
-                {
-                    if (Vector2.Distance(Movement.position, CurrentWaypoint.position) < 0.05f)
-                    {
-                        if (waitTimer <= 0)
-                        {
-                            CurrentWaypoint = null;
-                        }
-                        else
-                        {
-                            waitTimer -= Time.deltaTime;
-                        }
-                    }
-                    else
-                    {
-                        SetDestination(CurrentWaypoint.position);
-                    }
-                }
-            }
         }
     }
 

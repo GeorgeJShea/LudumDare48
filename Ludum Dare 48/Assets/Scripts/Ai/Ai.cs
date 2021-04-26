@@ -8,11 +8,9 @@ public class Ai : Character
     public Transform AiObjects;
     public NavMeshAgent Agent;
     [HideInInspector] public Transform Movement;
-    public Area PatrolArea;
 
     public Vector2 WaitTimer = new Vector2(1, 2);
     protected float waitTimer = 1;
-    [HideInInspector] public Transform CurrentWaypoint;
 
     public float AttackRange = 1;
     public float AttackDamage = 5;
@@ -107,38 +105,6 @@ public class Ai : Character
                     else
                     {
                         playerRange = 6;
-                    }
-                }
-
-            }
-            else
-            {
-                playerRange = 6;
-
-                if (PatrolArea == null) return;
-
-                if (!CurrentWaypoint)
-                {
-                    waitTimer = Random.Range(WaitTimer.x, WaitTimer.y);
-                    CurrentWaypoint = PatrolArea.GetWaypoint();
-                }
-
-                if (CurrentWaypoint)
-                {
-                    if (Vector2.Distance(Movement.position, CurrentWaypoint.position) < 0.05f)
-                    {
-                        if (waitTimer <= 0)
-                        {
-                            CurrentWaypoint = null;
-                        }
-                        else
-                        {
-                            waitTimer -= Time.deltaTime;
-                        }
-                    }
-                    else
-                    {
-                        SetDestination(CurrentWaypoint.position);
                     }
                 }
             }

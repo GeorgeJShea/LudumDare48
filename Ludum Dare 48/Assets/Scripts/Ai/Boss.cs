@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Boss : Ai
 {
@@ -21,6 +22,8 @@ public class Boss : Ai
     public AudioClip PunchSound;
     public AudioClip[] StepSounds;
 
+    public Image HealthBar;
+
     private int throwsRemaining;
 
     public Transform ThrowPos;
@@ -28,6 +31,8 @@ public class Boss : Ai
     protected override void Update()
     {
         if (isDead) return;
+
+        HealthBar.fillAmount = health / StartHealth;
 
         AiObjects.transform.position = Movement.position + (Vector3)GraphicsOffset;
 
@@ -80,6 +85,13 @@ public class Boss : Ai
                 }
             }
         }
+    }
+
+    public override void Die()
+    {
+        HealthBar.fillAmount = 0;
+
+        base.Die();
     }
 
     public override void AnimEvent()
