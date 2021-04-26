@@ -48,6 +48,11 @@ MonoBehaviour:
   StartHealth: 100
   isDead: 0
   rend: {fileID: 4741976769521792379}
+  HitSounds:
+  - {fileID: 8300000, guid: afe55e7dbae8f5747bcfe57e950b20ec, type: 3}
+  - {fileID: 8300000, guid: 413ba016101f1874eb5137d6ad55637b, type: 3}
+  - {fileID: 8300000, guid: 6ac04c2558e522d4aa9009edebd3dc20, type: 3}
+  - {fileID: 8300000, guid: 021f113a23c2ae145810c843c4da40c1, type: 3}
   AiObjects: {fileID: 4741976769521792376}
   Agent: {fileID: 4741976768488415313}
   Movement: {fileID: 0}
@@ -234,7 +239,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 7.5
+  m_Radius: 10
 --- !u!114 &4741976768833173680
 MonoBehaviour:
   m_ObjectHideFlags: 0

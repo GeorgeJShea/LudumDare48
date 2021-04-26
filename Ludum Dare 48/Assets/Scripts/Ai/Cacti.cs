@@ -18,6 +18,7 @@ public class Cacti : Character
     public GameObject DropWhenDead;
 
     public AudioClip[] AttackSounds;
+    public AudioClip[] DeathSounds;
 
     private bool isAttacking;
 
@@ -50,6 +51,8 @@ public class Cacti : Character
     public override void Die()
     {
         if (isDead) return;
+
+        SoundManager.instance.PlaySound(DeathSounds[Random.Range(0, DeathSounds.Length)], transform.position, 1);
 
         isDead = true;
 

@@ -224,6 +224,11 @@ MonoBehaviour:
   StartHealth: 100
   isDead: 0
   rend: {fileID: 8343408306663701675}
+  HitSounds:
+  - {fileID: 8300000, guid: afe55e7dbae8f5747bcfe57e950b20ec, type: 3}
+  - {fileID: 8300000, guid: 413ba016101f1874eb5137d6ad55637b, type: 3}
+  - {fileID: 8300000, guid: 6ac04c2558e522d4aa9009edebd3dc20, type: 3}
+  - {fileID: 8300000, guid: 021f113a23c2ae145810c843c4da40c1, type: 3}
   isPlayerClose: 0
   anim: {fileID: 8343408306663701685}
   CactiProjectile: {fileID: 3769123169295437976, guid: 9e0cef4a7bf564a41a82c3640abd7238, type: 3}
@@ -237,6 +242,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cdb20129af6a1c54cbc5481bd81d7b01, type: 3}
   - {fileID: 8300000, guid: 9a4a00f5f2f53c7498f7745b77923048, type: 3}
   - {fileID: 8300000, guid: 4efabfd29efe1a448b87679da648b0d6, type: 3}
+  DeathSounds:
+  - {fileID: 8300000, guid: 7436b04c7ad5d4b488180c5182ec4770, type: 3}
+  - {fileID: 8300000, guid: 956e1275107afe5458a9132870ffb515, type: 3}
 --- !u!1 &8343408306663701684
 GameObject:
   m_ObjectHideFlags: 0

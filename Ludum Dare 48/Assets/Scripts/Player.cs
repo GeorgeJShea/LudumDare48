@@ -116,7 +116,7 @@ public class Player : Character
     {
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Movement"))
         {
-            SoundManager.instance.PlaySound(StepSounds[Random.Range(0, StepSounds.Length)], transform.position, 0.15f, 0.9f);
+            SoundManager.instance.PlaySound(StepSounds[Random.Range(0, StepSounds.Length)], transform.position, 0.2f, 0.9f);
         }
     }
 

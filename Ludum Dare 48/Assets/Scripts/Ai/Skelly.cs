@@ -12,6 +12,7 @@ public class Skelly : Ai
     public float projectileLife = 3;
 
     public AudioClip[] ThrowBoneSounds;
+    public AudioClip[] StepSounds;
 
     public Transform ThrowPos;
 
@@ -41,10 +42,9 @@ public class Skelly : Ai
                     float pathLength = GetPathLength(path);
                     if (path.status != NavMeshPathStatus.PathInvalid && pathLength < playerRange)
                     {
-                        Vector3 throwPos = new Vector3(ThrowPos.localPosition.x * Mathf.Sign(anim.GetFloat("X")), ThrowPos.localPosition.y);
-                        throwPos = transform.TransformPoint(throwPos);
+                        Vector3 throwPos = Movement.position + new Vector3(ThrowPos.localPosition.x * Mathf.Sign(anim.GetFloat("X")), 0);
 
-                        if (isPlayerClose && !CheckWallBetween(Player.instance, throwPos) && pathLength < AttackRange)
+                        if (!CheckWallBetween(Player.instance, throwPos) && pathLength < AttackRange)
                         {
                             Vector3 playerDir = Player.instance.transform.position - transform.position;
                             playerDir = playerDir.normalized;
@@ -59,14 +59,14 @@ public class Skelly : Ai
                     }
                     else
                     {
-                        playerRange = 10;
+                        playerRange = 12.5f;
                     }
                 }
 
             }
             else
             {
-                playerRange = 10;
+                playerRange = 12.5f;
 
                 if (PatrolArea == null) return;
 
@@ -118,6 +118,10 @@ public class Skelly : Ai
             temp.GetComponent<Projectile>().bulletSet(projectileDamage, projectileSpeed, playerDir, projectileLife, true, gameObject, Mathf.Abs(ThrowPos.position.y - Movement.position.y));
 
             anim.SetFloat("X", playerDir.x);
+        }
+        else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Movement"))
+        {
+            SoundManager.instance.PlaySound(StepSounds[Random.Range(0, StepSounds.Length)], Movement.position, 1, 0.9f);
         }
     }
 }

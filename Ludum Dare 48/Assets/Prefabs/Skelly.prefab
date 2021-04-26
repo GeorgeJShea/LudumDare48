@@ -390,13 +390,18 @@ MonoBehaviour:
   StartHealth: 100
   isDead: 0
   rend: {fileID: 8644931162984618141}
+  HitSounds:
+  - {fileID: 8300000, guid: afe55e7dbae8f5747bcfe57e950b20ec, type: 3}
+  - {fileID: 8300000, guid: 413ba016101f1874eb5137d6ad55637b, type: 3}
+  - {fileID: 8300000, guid: 6ac04c2558e522d4aa9009edebd3dc20, type: 3}
+  - {fileID: 8300000, guid: 021f113a23c2ae145810c843c4da40c1, type: 3}
   AiObjects: {fileID: 8644931162984618142}
   Agent: {fileID: 8644931164086144439}
   Movement: {fileID: 0}
   PatrolArea: {fileID: 0}
   WaitTimer: {x: 1, y: 2}
   CurrentWaypoint: {fileID: 0}
-  AttackRange: 8
+  AttackRange: 5
   AttackDamage: 5
   isPlayerClose: 0
   anim: {fileID: 8644931162984618115}
@@ -417,6 +422,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7aa6bbb0944e04343852fd8fa4855a7f, type: 3}
   - {fileID: 8300000, guid: ff37e5b7b95fc1044b50feeec164bb71, type: 3}
   - {fileID: 8300000, guid: 2723a319ede9cb34face0f9023da2e87, type: 3}
+  StepSounds:
+  - {fileID: 8300000, guid: d188a7846dad46846a835c396d93b48a, type: 3}
+  - {fileID: 8300000, guid: ce0878faaf816eb428d69526c14e6618, type: 3}
+  - {fileID: 8300000, guid: e29880ef62a390d49b907d7fe17b6d9e, type: 3}
+  - {fileID: 8300000, guid: 105a4d665be0f744eb51fa7c1d32e3ba, type: 3}
   ThrowPos: {fileID: 1855287583}
 --- !u!1001 &1334044238914310371
 PrefabInstance:

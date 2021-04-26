@@ -8,6 +8,8 @@ public class Character : MonoBehaviour, IHitable
     public bool isDead;
     public Renderer rend;
 
+    public AudioClip[] HitSounds;
+
     public float Health { get { return health; } set { health = value; } }
     protected float health;
 
@@ -19,6 +21,9 @@ public class Character : MonoBehaviour, IHitable
     public virtual void Damage(float damage)
     {
         StartCoroutine(Flicker());
+
+        if (HitSounds.Length > 0) SoundManager.instance.PlaySound(HitSounds[Random.Range(0, HitSounds.Length)], GetPosition(), 1);
+
         health -= damage;
         if (health <= 0)
         {
@@ -40,8 +45,8 @@ public class Character : MonoBehaviour, IHitable
 
     public bool CheckWallBetween(Character toCheck, Vector3 fromPos)
     {
-        Vector2 toCheckDir = toCheck.transform.position - fromPos;
-        RaycastHit2D hit = Physics2D.Raycast(fromPos, toCheckDir, Vector2.Distance(fromPos, toCheck.transform.position), LayerMask.GetMask("wall"));
+        Vector2 toCheckDir = toCheck.GetPosition() - fromPos;
+        RaycastHit2D hit = Physics2D.Raycast(fromPos, toCheckDir, Vector2.Distance(fromPos, toCheck.GetPosition()), LayerMask.GetMask("wall"));
         return hit.collider;
     }
 
