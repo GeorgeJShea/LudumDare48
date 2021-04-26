@@ -12,6 +12,8 @@ public class Player : Character
     public Flamethrower Flamethrower;
     public AdvGunLogic Shotgun;
 
+    public AudioClip[] StepSounds;
+
     [HideInInspector] public Rigidbody2D rb;
 
     public static Player instance
@@ -102,6 +104,20 @@ public class Player : Character
         health = StartHealth;
 
         isDead = false;
+    }
+
+    public void Heal(float amount)
+    {
+        health += amount;
+        health = Mathf.Clamp(health, 0, StartHealth);
+    }
+
+    public override void AnimEvent()
+    {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Movement"))
+        {
+            SoundManager.instance.PlaySound(StepSounds[Random.Range(0, StepSounds.Length)], transform.position, 0.15f, 0.9f);
+        }
     }
 
     public override void MoveCharacter(Vector3 by)

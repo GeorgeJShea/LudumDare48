@@ -408,7 +408,7 @@ MonoBehaviour:
   anim: {fileID: 8644931162984618115}
   isAttacking: 0
   GraphicsOffset: {x: 0, y: 1}
-  DropWhenDead: {fileID: 0}
+  DropWhenDead: {fileID: 1711876080656016681, guid: 156306546c98ebb4086a28b3471e808b, type: 3}
   BoneProjectile: {fileID: 3769123169295437976, guid: 6af39740b3addf74fb93852394931369, type: 3}
   projectileDamage: 10
   projectileSpeed: 7.5

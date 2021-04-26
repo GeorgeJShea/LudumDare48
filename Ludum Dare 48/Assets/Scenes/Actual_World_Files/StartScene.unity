@@ -1071,7 +1071,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987382854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.916745, y: 2.0744686, z: -5}
+  m_LocalPosition: {x: 5.902236, y: 2.0878558, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1123,6 +1123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1238654181}
   cam: {fileID: 987382856}
+  MouseDirOffset: 3
+  MouseDirOverride: 3
 --- !u!1 &1022571841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,6 +1388,13 @@ MonoBehaviour:
   Movement: {fileID: 1238654185}
   Flamethrower: {fileID: 490376857}
   Shotgun: {fileID: 2017579339}
+  StepSounds:
+  - {fileID: 8300000, guid: 8ed797f9b1c68c84ab2b29c85e696c6e, type: 3}
+  - {fileID: 8300000, guid: a0bc4dbc6a71d184b92e7c3e19c76aea, type: 3}
+  - {fileID: 8300000, guid: 3161e2205003356418ac620df178d49b, type: 3}
+  - {fileID: 8300000, guid: 474182e3b1d10334cac38b18c79f600e, type: 3}
+  - {fileID: 8300000, guid: cf20b1bc8f6e2b54eb74dc98017bf250, type: 3}
+  - {fileID: 8300000, guid: bc245cc19ea440145b6e2b271ac7238b, type: 3}
   rb: {fileID: 0}
 --- !u!114 &1238654185
 MonoBehaviour:
@@ -1705,6 +1714,7 @@ GameObject:
   - component: {fileID: 1940152775}
   - component: {fileID: 1940152776}
   - component: {fileID: 1940152778}
+  - component: {fileID: 1940152779}
   m_Layer: 8
   m_Name: Graphics
   m_TagString: Untagged
@@ -1813,6 +1823,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1940152779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940152774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe851cb2dbad9004c88b3e15a5419c3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2017579334
 PrefabInstance:
   m_ObjectHideFlags: 0
