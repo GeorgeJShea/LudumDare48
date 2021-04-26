@@ -25,6 +25,8 @@ public class Ai : Character
 
     public GameObject DropWhenDead;
 
+    public AudioClip[] DeathSounds;
+
     protected float playerRange = 6;
 
     public override void Awake()
@@ -44,6 +46,8 @@ public class Ai : Character
     public override void Die()
     {
         if (isDead) return;
+
+        SoundManager.instance.PlaySound(DeathSounds[Random.Range(0, DeathSounds.Length)], Movement.position, 1);
 
         isDead = true;
 

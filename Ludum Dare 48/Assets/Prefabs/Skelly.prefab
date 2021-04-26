@@ -409,6 +409,11 @@ MonoBehaviour:
   isAttacking: 0
   GraphicsOffset: {x: 0, y: 1}
   DropWhenDead: {fileID: 1711876080656016681, guid: 156306546c98ebb4086a28b3471e808b, type: 3}
+  DeathSounds:
+  - {fileID: 8300000, guid: 4fc4e0e16cd2a8141aa9a085a43e00f5, type: 3}
+  - {fileID: 8300000, guid: 5ba44c33e8b506f4589ee2a721b149e4, type: 3}
+  - {fileID: 8300000, guid: 685bb4330a3c481488ba9dca0f0ecd22, type: 3}
+  - {fileID: 8300000, guid: 50bf06edb19511b4798e00b768d99ebd, type: 3}
   BoneProjectile: {fileID: 3769123169295437976, guid: 6af39740b3addf74fb93852394931369, type: 3}
   projectileDamage: 10
   projectileSpeed: 7.5

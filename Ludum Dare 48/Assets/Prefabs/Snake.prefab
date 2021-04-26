@@ -61,6 +61,11 @@ MonoBehaviour:
   isAttacking: 0
   GraphicsOffset: {x: 0, y: 0.5}
   DropWhenDead: {fileID: 1880006526629471268, guid: bcc7cb16abf28d848a6b7916f50f158b, type: 3}
+  DeathSounds:
+  - {fileID: 8300000, guid: cf1ea1eb6cd59ce4aacd0dff29887f4f, type: 3}
+  - {fileID: 8300000, guid: 5f7e3839919368d43a33eda73f58ef1d, type: 3}
+  - {fileID: 8300000, guid: 853c0b80258afd346954f2a25acb411f, type: 3}
+  - {fileID: 8300000, guid: b4ea792e591afba4ea55bba3b98fab3f, type: 3}
   JumpSpeed: 5
   Move: 0
   JumpSounds:

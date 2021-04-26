@@ -44,4 +44,11 @@ public class Snake : Ai
             Agent.speed = Move ? JumpSpeed : 0.01f;
         }
     }
+
+    public override void Die()
+    {
+        SoundManager.instance.PlaySound(DeathSounds[Random.Range(0, DeathSounds.Length)], Movement.position, 1);
+
+        base.Die();
+    }
 }
