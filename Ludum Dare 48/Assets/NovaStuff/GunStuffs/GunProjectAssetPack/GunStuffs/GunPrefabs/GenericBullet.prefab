@@ -177,15 +177,20 @@ MonoBehaviour:
   lifeTime: 0
   petterOut: {fileID: 0}
   sucHit: {fileID: 0}
-  bulletNoise: {fileID: 0}
   Graphics: {fileID: 2191980196323439351}
   damage: 0
   speed: 0
   destroy: 0
   shotBy: {fileID: 0}
   flames: 0
+  ImpactSounds:
+  - {fileID: 8300000, guid: a1795f07414524145bd0e276c089da4a, type: 3}
+  - {fileID: 8300000, guid: e3f58e9b9a2aa4846a504e95910127f1, type: 3}
+  - {fileID: 8300000, guid: 754db4302a7e9c44383a0b2f8b4e0db6, type: 3}
+  - {fileID: 8300000, guid: a40e1dfeb779c2944af1fbca66f618f3, type: 3}
+  Rotate: 0
+  RotationSpeed: 5
   MoveDir: {x: 0, y: 0, z: 0}
-  partical: {fileID: 0}
 --- !u!50 &8737993597585678528
 Rigidbody2D:
   serializedVersion: 4

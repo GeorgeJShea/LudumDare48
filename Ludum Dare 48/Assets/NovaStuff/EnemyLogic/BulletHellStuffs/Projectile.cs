@@ -22,6 +22,8 @@ public class Projectile : MonoBehaviour
     [HideInInspector] public GameObject shotBy;
     [HideInInspector] public bool flames;
 
+    public AudioClip[] ImpactSounds;
+
     public bool Rotate;
     public float RotationSpeed = 5;
 
@@ -79,6 +81,11 @@ public class Projectile : MonoBehaviour
         }
         else
         {
+            if (ImpactSounds.Length > 0)
+            {
+                SoundManager.instance.PlaySound(ImpactSounds[Random.Range(0, ImpactSounds.Length)], transform.position, 1);
+            }
+
             DestroyProjectile();
         }
     }
