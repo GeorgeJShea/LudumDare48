@@ -4993,6 +4993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 609140551563424544}
+  AngleOffset: 0
 --- !u!61 &609140551563424549
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5115,7 +5116,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 16e443c4a52e81d4fa5e7efc3ddb7e0d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 19c558711963cc447af1e784313ce641, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
