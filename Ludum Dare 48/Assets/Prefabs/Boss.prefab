@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c66e33006490a41b854e6a4526184a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartHealth: 100
+  StartHealth: 1000
   isDead: 0
   rend: {fileID: 4474735151032411679}
   HitSounds:
