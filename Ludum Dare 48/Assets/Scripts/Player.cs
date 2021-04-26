@@ -13,6 +13,7 @@ public class Player : Character
     public AdvGunLogic Shotgun;
 
     public AudioClip[] StepSounds;
+    public AudioClip DeathSound;
 
     [HideInInspector] public Rigidbody2D rb;
 
@@ -91,6 +92,8 @@ public class Player : Character
         Movement.FreezeInput();
         Hands.SetActive(false);
         WeaponsHolder.SetActive(false);
+
+        SoundManager.instance.PlaySound(DeathSound, transform.position, 1);
 
         yield return new WaitForSeconds(2);
 

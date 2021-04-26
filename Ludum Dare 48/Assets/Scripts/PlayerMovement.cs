@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public bool isDashing;
     public Animator anim;
 
+    public AudioClip[] DashSounds;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -56,10 +58,15 @@ public class PlayerMovement : MonoBehaviour
 
         isDashing = true;
 
-        anim.Play("Hurt");
+        anim.Play("Dash");
         freezeInput = true;
 
         rb.velocity = rb.velocity.normalized * dashSpeed;
+
+        if (DashSounds.Length > 0)
+        {
+            SoundManager.instance.PlaySound(DashSounds[Random.Range(0, DashSounds.Length)], transform.position, 0.75f);
+        }
 
         while (true)
         {
