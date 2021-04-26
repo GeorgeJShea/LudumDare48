@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Amount: {x: 10, y: 25}
+  PickupSounds:
+  - {fileID: 8300000, guid: 74c986b65a9cce240837da1f5070e706, type: 3}
+  - {fileID: 8300000, guid: 13991624e7d1b5343848b802f5c8d77f, type: 3}
+  - {fileID: 8300000, guid: 4d2a96f41ed21bc4e907a1113e4c282a, type: 3}
+  - {fileID: 8300000, guid: eefe9f662f908484480247f815bafaaa, type: 3}
 --- !u!1001 &997214990573699341
 PrefabInstance:
   m_ObjectHideFlags: 0

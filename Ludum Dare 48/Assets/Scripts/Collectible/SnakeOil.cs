@@ -5,7 +5,7 @@ using UnityEngine;
 public class SnakeOil : MonoBehaviour
 {
     public Vector2 Amount;
-
+    public AudioClip[] PickupSounds;
     private float SpawnTime;
 
     private void Start()
@@ -21,6 +21,11 @@ public class SnakeOil : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (PickupSounds.Length > 0)
+        {
+            SoundManager.instance.PlaySound(PickupSounds[Random.Range(0, PickupSounds.Length)], transform.position, 0.5f);
+        }
+
         Player.instance.PickupSnakeOil(Random.Range(Amount.x, Amount.y));
         GetComponent<GunDropAni>().pickWeapon();
         Destroy(gameObject);

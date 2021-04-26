@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Beer : MonoBehaviour
+public class CactiNeedlePickup : MonoBehaviour
 {
     public Vector2 Amount;
-
+    public AudioClip[] PickupSounds;
     private float SpawnTime;
 
     private void Start()
@@ -21,7 +21,12 @@ public class Beer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player.instance.Heal(Random.Range(Amount.x, Amount.y));
+        if (PickupSounds.Length > 0)
+        {
+            SoundManager.instance.PlaySound(PickupSounds[Random.Range(0, PickupSounds.Length)], transform.position, 0.5f);
+        }
+
+        Player.instance.PickupShotgunAmmo((int)Random.Range(Amount.x, Amount.y));
         GetComponent<GunDropAni>().pickWeapon();
         Destroy(gameObject);
     }
