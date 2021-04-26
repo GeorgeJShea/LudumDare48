@@ -95,6 +95,8 @@ public class Boss : Ai
     {
         HealthBar.fillAmount = 0;
 
+        LevelManager.instance.EndGame();
+
         base.Die();
     }
 

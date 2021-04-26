@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class LevelManager : MonoBehaviour
 
     public AudioSource MusicSource;
     public AudioClip BossfightMusic;
+    public AudioClip EndingMusic;
+
+    public Image FadeImage;
 
     public static LevelManager instance;
 
@@ -30,6 +34,54 @@ public class LevelManager : MonoBehaviour
     public void LoadNextLevel()
     {
         StartCoroutine(ILoadNextLevel());
+    }
+
+    public void EndGame()
+    {
+        StartCoroutine(DoEnding());
+    }
+
+    public IEnumerator DoEnding()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        Time.timeScale = 0;
+
+        float initialMusicVol = MusicSource.volume;
+        float timeStamp = Time.unscaledTime;
+        float duration = 1f;
+        while (Time.unscaledTime < timeStamp + duration)
+        {
+            float t = (Time.unscaledTime - timeStamp) / duration;
+
+            MusicSource.volume = Mathf.Lerp(initialMusicVol, 0, t);
+
+            yield return null;
+        }
+
+        MusicSource.volume = 0;
+        MusicSource.clip = EndingMusic;
+        MusicSource.volume = initialMusicVol;
+        MusicSource.loop = false;
+        MusicSource.Play();
+
+        yield return new WaitForSecondsRealtime(EndingMusic.length);
+
+        Color fadeColor = FadeImage.color;
+
+        timeStamp = Time.unscaledTime;
+        duration = 0.2f;
+        while (Time.unscaledTime < timeStamp + duration)
+        {
+            float t = (Time.unscaledTime - timeStamp) / duration;
+
+            fadeColor.a = t;
+            FadeImage.color = fadeColor;
+
+            yield return null;
+        }
+
+        SceneManager.LoadScene(0);
     }
 
     public IEnumerator ILoadNextLevel()
