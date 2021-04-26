@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SnakeOil : MonoBehaviour
 {
-    public float Amount;
+    public Vector2 Amount;
 
     private float SpawnTime;
 
@@ -21,7 +21,7 @@ public class SnakeOil : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player.instance.PickupSnakeOil(Amount);
+        Player.instance.PickupSnakeOil(Random.Range(Amount.x, Amount.y));
         GetComponent<GunDropAni>().pickWeapon();
         Destroy(gameObject);
     }

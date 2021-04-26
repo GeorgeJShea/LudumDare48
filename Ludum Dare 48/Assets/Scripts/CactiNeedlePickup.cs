@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CactiNeedlePickup : MonoBehaviour
 {
-    public float Amount;
+    public Vector2 Amount;
 
     private float SpawnTime;
 
@@ -21,7 +21,7 @@ public class CactiNeedlePickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player.instance.PickupShotgunAmmo(Amount);
+        Player.instance.PickupShotgunAmmo(Random.Range(Amount.x, Amount.y));
         GetComponent<GunDropAni>().pickWeapon();
         Destroy(gameObject);
     }
