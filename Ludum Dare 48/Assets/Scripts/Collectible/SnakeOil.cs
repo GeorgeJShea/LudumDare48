@@ -15,7 +15,7 @@ public class SnakeOil : MonoBehaviour
 
     private void Update()
     {
-        float newScale = Mathf.Lerp(0, 1, Time.time - SpawnTime);
+        float newScale = Mathf.Lerp(0, 1, (Time.time - SpawnTime) * 2);
         transform.localScale = new Vector3(newScale, newScale, 1);
     }
 

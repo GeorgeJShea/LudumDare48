@@ -7,6 +7,8 @@ public class Destructable : MonoBehaviour, IHitable
     public SpriteRenderer rend;
     public Sprite[] Sprites;
 
+    public GameObject[] ToSpawn;
+
     public float Health { get { return 1; } set { } }
 
     private void Awake()
@@ -16,6 +18,8 @@ public class Destructable : MonoBehaviour, IHitable
 
     public void Damage(float damage, bool makeHitSound = true)
     {
+        if (ToSpawn.Length > 0) Instantiate(ToSpawn[Random.Range(0, ToSpawn.Length)], transform.position + (Vector3.up * 0.5f), Quaternion.identity);
+
         Destroy(gameObject);
     }
 
