@@ -175,8 +175,8 @@ MonoBehaviour:
   triggerDelay: 0.5
   reloadTime: 1
   costToShoot: 1
-  clip: 8
-  clipSize: 8
+  clip: 6
+  clipSize: 6
   ammoPool: 1e+17
   muzzleFlash: {fileID: 1112699458390963645, guid: 88fc8c9b16231cd4182ef4fe1c337896, type: 3}
   bullets: 1
@@ -191,6 +191,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6a2308ebe3dc842428b6b3ff26c616b6, type: 3}
   - {fileID: 8300000, guid: 1b8bce09132f8b3458ebeb23d19e9686, type: 3}
   - {fileID: 8300000, guid: ee0b0693bb621ce4bac9d6df6f465d72, type: 3}
+  ClickSounds: []
   BulletPool: {fileID: 510192862849099944}
   damage: 25
   speed: 20
