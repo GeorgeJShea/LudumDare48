@@ -17,6 +17,8 @@ public class Cacti : Character
 
     public GameObject DropWhenDead;
 
+    public AudioClip[] AttackSounds;
+
     private bool isAttacking;
 
     private void Update()
@@ -71,6 +73,8 @@ public class Cacti : Character
     {
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
+            SoundManager.instance.PlaySound(AttackSounds[Random.Range(0, AttackSounds.Length)], transform.position, 1);
+
             GameObject temp = Instantiate(CactiProjectile, transform);
             Vector3 throwPos = new Vector3(ThrowPos.localPosition.x * Mathf.Sign(anim.GetFloat("X")), 0);
             temp.transform.localPosition = throwPos;
@@ -83,7 +87,7 @@ public class Cacti : Character
             playerDir = playerDir.normalized;
 
             //temp.transform.right = playerDir;
-            temp.GetComponent<Projectile>().bulletSet(null, projectileDamage, projectileSpeed, playerDir, projectileLife, true, gameObject, ThrowPos.localPosition.y);
+            temp.GetComponent<Projectile>().bulletSet(projectileDamage, projectileSpeed, playerDir, projectileLife, true, gameObject, ThrowPos.localPosition.y);
 
             anim.SetFloat("X", playerDir.x);
         }

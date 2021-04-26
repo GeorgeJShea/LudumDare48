@@ -11,6 +11,8 @@ public class Skelly : Ai
     public float projectileSpeed = 5;
     public float projectileLife = 3;
 
+    public AudioClip[] ThrowBoneSounds;
+
     public Transform ThrowPos;
 
     protected override void Update()
@@ -100,6 +102,8 @@ public class Skelly : Ai
     {
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
+            SoundManager.instance.PlaySound(ThrowBoneSounds[Random.Range(0, ThrowBoneSounds.Length)], Movement.position, 1);
+
             GameObject temp = Instantiate(BoneProjectile);
             Vector3 throwPos = Movement.position + new Vector3(ThrowPos.localPosition.x * Mathf.Sign(anim.GetFloat("X")), 0);
             temp.transform.localPosition = throwPos;
@@ -111,7 +115,7 @@ public class Skelly : Ai
             playerDir = playerDir.normalized;
 
             //temp.transform.right = playerDir;
-            temp.GetComponent<Projectile>().bulletSet(null, projectileDamage, projectileSpeed, playerDir, projectileLife, true, gameObject, Mathf.Abs(ThrowPos.position.y - Movement.position.y));
+            temp.GetComponent<Projectile>().bulletSet(projectileDamage, projectileSpeed, playerDir, projectileLife, true, gameObject, Mathf.Abs(ThrowPos.position.y - Movement.position.y));
 
             anim.SetFloat("X", playerDir.x);
         }

@@ -181,9 +181,14 @@ MonoBehaviour:
   bullets: 15
   deviation: 15
   lagTime: 0.01
+  ReloadSounds:
+  - {fileID: 8300000, guid: 7158a3bb681c8674c9c31ec416517d85, type: 3}
+  ShootSounds:
+  - {fileID: 8300000, guid: d6b938efc292a0b4688fd525df24ba7d, type: 3}
+  - {fileID: 8300000, guid: 391e7b5017f897b4ea3fb812391c5ee0, type: 3}
+  - {fileID: 8300000, guid: 0dcd997b53e3b2e46bf44bb7d4d72ac9, type: 3}
+  - {fileID: 8300000, guid: 0aa0e89e8c0e1bf41b39b9007aba8b44, type: 3}
   BulletPool: {fileID: 94525900688886087}
-  gunNoise: {fileID: 0}
-  bulletNoise: {fileID: 0}
   damage: 5
   speed: 14
   bulletLife: 5
@@ -206,6 +211,7 @@ MonoBehaviour:
   speed: 0.04
   height: 0.05
   droppedBool: 1
+  drop: {fileID: 0}
 --- !u!114 &-3112918721654312317
 MonoBehaviour:
   m_ObjectHideFlags: 0

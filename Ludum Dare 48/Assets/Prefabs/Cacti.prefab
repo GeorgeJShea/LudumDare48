@@ -231,6 +231,11 @@ MonoBehaviour:
   projectileLife: 10
   ThrowPos: {fileID: 6321000192738310922}
   DropWhenDead: {fileID: 5835906563326073935, guid: 11c6e442586eeb14e8fc4038d75bba9f, type: 3}
+  AttackSounds:
+  - {fileID: 8300000, guid: 17b4ca07309f81f4eba25173928ce580, type: 3}
+  - {fileID: 8300000, guid: cdb20129af6a1c54cbc5481bd81d7b01, type: 3}
+  - {fileID: 8300000, guid: 9a4a00f5f2f53c7498f7745b77923048, type: 3}
+  - {fileID: 8300000, guid: 4efabfd29efe1a448b87679da648b0d6, type: 3}
 --- !u!1 &8343408306663701684
 GameObject:
   m_ObjectHideFlags: 0

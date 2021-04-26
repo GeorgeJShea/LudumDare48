@@ -408,8 +408,14 @@ MonoBehaviour:
   anim: {fileID: 8644931162984618115}
   isAttacking: 0
   GraphicsOffset: {x: 0, y: 1}
+  DropWhenDead: {fileID: 0}
   BoneProjectile: {fileID: 3769123169295437976, guid: 6af39740b3addf74fb93852394931369, type: 3}
   projectileDamage: 10
   projectileSpeed: 7.5
   projectileLife: 10
+  ThrowBoneSounds:
+  - {fileID: 8300000, guid: 9f71597e1140deb47ab9755b5b6c3582, type: 3}
+  - {fileID: 8300000, guid: 7aa6bbb0944e04343852fd8fa4855a7f, type: 3}
+  - {fileID: 8300000, guid: ff37e5b7b95fc1044b50feeec164bb71, type: 3}
+  - {fileID: 8300000, guid: 2723a319ede9cb34face0f9023da2e87, type: 3}
   ThrowPos: {fileID: 1855287583}

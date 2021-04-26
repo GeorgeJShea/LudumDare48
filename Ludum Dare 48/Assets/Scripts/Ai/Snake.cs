@@ -7,6 +7,8 @@ public class Snake : Ai
     public float JumpSpeed;
     public bool Move;
 
+    public AudioClip[] JumpSounds;
+
     public override void Awake()
     {
         base.Awake();
@@ -23,6 +25,7 @@ public class Snake : Ai
         if (isAttacking)
         {
             Move = false;
+            Agent.speed = 0.01f;
         }
     }
 
@@ -32,6 +35,12 @@ public class Snake : Ai
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Movement"))
         {
             Move = !Move;
+
+            if (Move)
+            {
+                SoundManager.instance.PlaySound(JumpSounds[Random.Range(0, JumpSounds.Length)], Movement.position, 1);
+            }
+
             Agent.speed = Move ? JumpSpeed : 0.01f;
         }
     }

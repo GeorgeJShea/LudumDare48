@@ -172,18 +172,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerDelay: 0.5
-  reloadTime: 0.1
+  reloadTime: 1
   costToShoot: 1
   clip: 8
   clipSize: 8
   ammoPool: 1e+17
   muzzleFlash: {fileID: 1112699458390963645, guid: 88fc8c9b16231cd4182ef4fe1c337896, type: 3}
   bullets: 1
-  deviation: 4
+  deviation: 2
   lagTime: 0.1
+  ReloadSounds:
+  - {fileID: 8300000, guid: c60526724a4ee444eb4c405882518ad6, type: 3}
+  ShootSounds:
+  - {fileID: 8300000, guid: 3ded6133062a49946900de1c3f459ce8, type: 3}
+  - {fileID: 8300000, guid: 6a2308ebe3dc842428b6b3ff26c616b6, type: 3}
+  - {fileID: 8300000, guid: 1b8bce09132f8b3458ebeb23d19e9686, type: 3}
+  - {fileID: 8300000, guid: ee0b0693bb621ce4bac9d6df6f465d72, type: 3}
   BulletPool: {fileID: 510192862849099944}
-  gunNoise: {fileID: 0}
-  bulletNoise: {fileID: 0}
   damage: 20
   speed: 20
   bulletLife: 2
@@ -206,6 +211,7 @@ MonoBehaviour:
   speed: 0.04
   height: 0.05
   droppedBool: 1
+  drop: {fileID: 0}
 --- !u!114 &-5781156983843176824
 MonoBehaviour:
   m_ObjectHideFlags: 0

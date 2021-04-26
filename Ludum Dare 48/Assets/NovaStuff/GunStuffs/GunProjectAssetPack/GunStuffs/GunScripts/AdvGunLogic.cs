@@ -64,12 +64,10 @@ public class AdvGunLogic : Item
     [Header("               BULLET SETTINGS")]
     [Header("")]
 
+    public AudioClip[] ReloadSounds;
+    public AudioClip[] ShootSounds;
+
     public BulletPooling BulletPool;
-    [Tooltip("Gun noise")]
-    public AudioSource gunNoise;
-    [Tooltip("Bullet noise")]
-    public AudioSource bulletNoise;
-    [Header("")]
 
     [Tooltip("How much damage the bullet will do")]
     public float damage;
@@ -158,7 +156,7 @@ public class AdvGunLogic : Item
         //bul.transform.rotation = bulletDev;
         bul.SetActive(true);
 
-        bul.GetComponent<Projectile>().bulletSet(bulletNoise, damage, speed, bulletDev * Vector2.right, bulletLife, false, transform.root.gameObject, transform.localPosition.y);
+        bul.GetComponent<Projectile>().bulletSet(damage, speed, bulletDev * Vector2.right, bulletLife, false, transform.root.gameObject, transform.localPosition.y);
 
         // Used to make sure that a ton of particles dont spawn
         if (lagTimeReset >= .1 && toFast == true)
@@ -192,15 +190,12 @@ public class AdvGunLogic : Item
     */
     public void Shoot()
     {
+        if (ShootSounds.Length > 0)
+        {
+            SoundManager.instance.PlaySound(ShootSounds[Random.Range(0, ShootSounds.Length)], transform.position, 1);
+        }
+
         Destroy(Instantiate(muzzleFlash, transform.GetChild(0).transform.position, Quaternion.identity), 1);
-        if (gunNoise != null)
-        {
-            gunNoise.Play(0);
-        }
-        else
-        {
-            Debug.Log("You dont have a gun noise plugged in");
-        }
     }
 
     /*  Summary:
@@ -210,6 +205,11 @@ public class AdvGunLogic : Item
     {
         if (ammoPool > 0 && ammoPool < clipSize && clip == 0)
         {
+            if (ReloadSounds.Length > 0)
+            {
+                SoundManager.instance.PlaySound(ReloadSounds[Random.Range(0, ReloadSounds.Length)], transform.position, 1);
+            }
+
             //Begins reload animation of ui
             uiComponent.ReloadAni(reloadTime);
 
@@ -220,6 +220,11 @@ public class AdvGunLogic : Item
         }
         else if (clip == 0 && ammoPool - clip > 0)
         {
+            if (ReloadSounds.Length > 0)
+            {
+                SoundManager.instance.PlaySound(ReloadSounds[Random.Range(0, ReloadSounds.Length)], transform.position, 1);
+            }
+
             //Begins reload animation of ui
             uiComponent.ReloadAni(reloadTime);
 

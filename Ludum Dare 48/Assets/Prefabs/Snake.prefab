@@ -63,6 +63,11 @@ MonoBehaviour:
   DropWhenDead: {fileID: 1880006526629471268, guid: bcc7cb16abf28d848a6b7916f50f158b, type: 3}
   JumpSpeed: 5
   Move: 0
+  JumpSounds:
+  - {fileID: 8300000, guid: b35ec396eae645e449999c761dfb79f6, type: 3}
+  - {fileID: 8300000, guid: 537222d86532a834985b48f661a856e7, type: 3}
+  - {fileID: 8300000, guid: 2bd34df757e140f48afc5eb8dcb58f12, type: 3}
+  - {fileID: 8300000, guid: cfc9769fd75b7fe4c803abb45ca14603, type: 3}
 --- !u!1 &4741976768227972817
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,8 +13,6 @@ public class Projectile : MonoBehaviour
     public GameObject petterOut;
     public GameObject sucHit;
 
-    public AudioSource bulletNoise;
-
     public GameObject Graphics;
 
     // Dirived from manager script
@@ -32,26 +30,9 @@ public class Projectile : MonoBehaviour
     private float shotTime;
 
     //[HideInInspector] public GameObject me;
-    [HideInInspector] public SpriteRenderer partical;
 
-    private void Awake()
+    public void bulletSet(float _damage, float _speed, Vector3 _dir, float _bulletLife, bool _destroy, GameObject _shotBy, float _bulletHeight)
     {
-        //Plays bullet noise
-        if (bulletNoise != null)
-        {
-            bulletNoise.Play();
-        }
-        else
-        {
-            Debug.Log("Bullet lacking sound");
-        }
-
-        partical = gameObject.GetComponent<SpriteRenderer>();
-    }
-
-    public void bulletSet(AudioSource _bulletNoise, float _damage, float _speed, Vector3 _dir, float _bulletLife, bool _destroy, GameObject _shotBy, float _bulletHeight)
-    {
-        bulletNoise = _bulletNoise;
         damage = _damage;
         speed = _speed;
         lifeTime = _bulletLife;
@@ -116,7 +97,7 @@ public class Projectile : MonoBehaviour
 
     public void IAmAlive(int _damage, float _speed, Quaternion pattern, GameObject _shotBy)
     {
-        bulletSet(null, _damage, _speed, pattern * Vector2.right, lifeTime, true, _shotBy, 0);
+        bulletSet(_damage, _speed, pattern * Vector2.right, lifeTime, true, _shotBy, 0);
 
         // Temp is the spawned in bullet 
         // Spawned from patterns script
