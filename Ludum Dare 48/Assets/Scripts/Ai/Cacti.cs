@@ -41,11 +41,11 @@ public class Cacti : Character
         }
     }
 
-    public override void Damage(float damage)
+    public override void Damage(float damage, bool makeHitSound = true)
     {
         if (isDead) return;
 
-        base.Damage(damage);
+        base.Damage(damage, makeHitSound);
     }
 
     public override void Die()

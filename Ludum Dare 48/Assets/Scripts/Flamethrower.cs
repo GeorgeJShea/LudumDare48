@@ -76,7 +76,7 @@ public class Flamethrower : Item
                         {
                             if (Trigger.Enemies[i])
                             {
-                                Trigger.Enemies[i].Damage(damage * Time.deltaTime);
+                                Trigger.Enemies[i].Damage(damage * Time.deltaTime, false);
                             }
                         }
                     }

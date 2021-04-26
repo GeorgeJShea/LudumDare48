@@ -35,9 +35,9 @@ public class Ai : Character
         Movement = Agent.transform;
     }
 
-    public override void Damage(float damage)
+    public override void Damage(float damage, bool makeHitSound = true)
     {
-        base.Damage(damage);
+        base.Damage(damage, makeHitSound);
 
         isPlayerClose = true;
         playerRange = 30;

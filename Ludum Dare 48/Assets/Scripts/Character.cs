@@ -8,7 +8,7 @@ public class Character : MonoBehaviour, IHitable
     public bool isDead;
     public Renderer rend;
 
-    public AudioClip[] HitSounds;
+    public AudioClip[] HitSounds = new AudioClip[0];
 
     public float Health { get { return health; } set { health = value; } }
     protected float health;
@@ -18,11 +18,17 @@ public class Character : MonoBehaviour, IHitable
         health = StartHealth;
     }
 
-    public virtual void Damage(float damage)
+    public virtual void Damage(float damage, bool makeHitSound = true)
     {
         StartCoroutine(Flicker());
 
-        if (HitSounds.Length > 0) SoundManager.instance.PlaySound(HitSounds[Random.Range(0, HitSounds.Length)], GetPosition(), 1);
+        if (makeHitSound)
+        {
+            if (HitSounds.Length > 0)
+            {
+                SoundManager.instance.PlaySound(HitSounds[Random.Range(0, HitSounds.Length)], GetPosition(), 1);
+            }
+        }
 
         health -= damage;
         if (health <= 0)
