@@ -129,6 +129,7 @@ MonoBehaviour:
   - {fileID: 1880006526629471268, guid: bcc7cb16abf28d848a6b7916f50f158b, type: 3}
   - {fileID: 1711876080656016681, guid: 156306546c98ebb4086a28b3471e808b, type: 3}
   - {fileID: 5835906563326073935, guid: 11c6e442586eeb14e8fc4038d75bba9f, type: 3}
+  BreakSound: {fileID: 8300000, guid: aad0f369c144a6249bed73b09e9d06f7, type: 3}
 --- !u!114 &212872419577953491
 MonoBehaviour:
   m_ObjectHideFlags: 0
