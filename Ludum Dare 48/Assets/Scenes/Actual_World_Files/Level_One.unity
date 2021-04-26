@@ -3617,11 +3617,51 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 0, y: 3, z: 0}
+  - first: {x: -5, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 13
+      m_TileSpriteIndex: 13
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -4, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 13
+      m_TileSpriteIndex: 13
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -3, y: 3, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 10
       m_TileSpriteIndex: 10
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -1, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 14
+      m_TileSpriteIndex: 14
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 0, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 13
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3680,13 +3720,15 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: b3cfeafecb0165943b718109b4c104c2, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: d06dc7560b3274f4192f8ddb67a8bd49, type: 2}
+    m_Data: {fileID: 11400000, guid: 308002496bb0b984e9e1f9d0cbcbedab, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 3ab0cf1d1b48e0f4c89c6f996617cb19, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: b2a0f2850109f7849afc4a5471a84249, type: 2}
+  - m_RefCount: 4
+    m_Data: {fileID: 11400000, guid: 530a609d7ea42124aaa17b37e1b71605, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 308002496bb0b984e9e1f9d0cbcbedab, type: 2}
+    m_Data: {fileID: 11400000, guid: d06dc7560b3274f4192f8ddb67a8bd49, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 61
     m_Data: {fileID: 7922459101649514654, guid: 7da5a2ebc3d65aa4f99a7e70a66f611e, type: 3}
@@ -3709,15 +3751,17 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: -1925900752374069265, guid: 7da5a2ebc3d65aa4f99a7e70a66f611e, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -7730297589156434396, guid: 7da5a2ebc3d65aa4f99a7e70a66f611e, type: 3}
+    m_Data: {fileID: -6959703595162238781, guid: 7da5a2ebc3d65aa4f99a7e70a66f611e, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 4787908609949875619, guid: 7da5a2ebc3d65aa4f99a7e70a66f611e, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -3840993885564665837, guid: 7da5a2ebc3d65aa4f99a7e70a66f611e, type: 3}
+  - m_RefCount: 4
+    m_Data: {fileID: 5502225456282918268, guid: 7da5a2ebc3d65aa4f99a7e70a66f611e, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -6959703595162238781, guid: 7da5a2ebc3d65aa4f99a7e70a66f611e, type: 3}
+    m_Data: {fileID: -7730297589156434396, guid: 7da5a2ebc3d65aa4f99a7e70a66f611e, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 270
+  - m_RefCount: 274
     m_Data:
       e00: 1
       e01: 0
@@ -3736,7 +3780,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 270
+  - m_RefCount: 274
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -4211,7 +4255,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.033333335
+  m_VoxelSize: 0.083333336
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
   m_NavMeshData: {fileID: 23800000, guid: 10fed2226a4031741884e174ea79dd99, type: 2}
@@ -14744,7 +14788,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274691270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 3, z: 0}
+  m_LocalPosition: {x: -1.5, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 376434340}
