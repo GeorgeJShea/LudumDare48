@@ -311,7 +311,7 @@ NavMeshAgent:
   m_Height: 0.16
   m_BaseOffset: 0.08
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!1 &8644931164345547575
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,10 +391,9 @@ MonoBehaviour:
   isDead: 0
   rend: {fileID: 8644931162984618141}
   HitSounds:
-  - {fileID: 8300000, guid: afe55e7dbae8f5747bcfe57e950b20ec, type: 3}
-  - {fileID: 8300000, guid: 413ba016101f1874eb5137d6ad55637b, type: 3}
-  - {fileID: 8300000, guid: 6ac04c2558e522d4aa9009edebd3dc20, type: 3}
-  - {fileID: 8300000, guid: 021f113a23c2ae145810c843c4da40c1, type: 3}
+  - {fileID: 8300000, guid: 92cc89b8540cb104985ea1201984e517, type: 3}
+  - {fileID: 8300000, guid: 0487d404617f6db4193701968e6932a5, type: 3}
+  - {fileID: 8300000, guid: 2cf2ad88588e94a48bb529957ed19f86, type: 3}
   AiObjects: {fileID: 8644931162984618142}
   Agent: {fileID: 8644931164086144439}
   Movement: {fileID: 0}
@@ -413,6 +412,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5ba44c33e8b506f4589ee2a721b149e4, type: 3}
   - {fileID: 8300000, guid: 685bb4330a3c481488ba9dca0f0ecd22, type: 3}
   - {fileID: 8300000, guid: 50bf06edb19511b4798e00b768d99ebd, type: 3}
+  ignorePlayerDistance: 0
   BoneProjectile: {fileID: 3769123169295437976, guid: 6af39740b3addf74fb93852394931369, type: 3}
   projectileDamage: 10
   projectileSpeed: 5

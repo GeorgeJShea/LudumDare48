@@ -27,6 +27,8 @@ public class Ai : Character
 
     public AudioClip[] DeathSounds;
 
+    public bool ignorePlayerDistance;
+
     protected float playerRange = 6;
 
     public override void Awake()
@@ -90,7 +92,7 @@ public class Ai : Character
                 {
                     Agent.CalculatePath(hit.position, path);
                     float pathLength = GetPathLength(path);
-                    if (path.status != NavMeshPathStatus.PathInvalid && pathLength < playerRange)
+                    if (path.status != NavMeshPathStatus.PathInvalid && ignorePlayerDistance ? true : pathLength < playerRange)
                     {
                         if (pathLength < 1)
                         {
