@@ -186,7 +186,7 @@ MonoBehaviour:
   bulletNoise: {fileID: 0}
   damage: 5
   speed: 14
-  bulletLife: 4
+  bulletLife: 5
   isSemi: 0
   uiComponent: {fileID: 0}
 --- !u!114 &-1459795947788489136

@@ -411,5 +411,5 @@ MonoBehaviour:
   BoneProjectile: {fileID: 3769123169295437976, guid: 6af39740b3addf74fb93852394931369, type: 3}
   projectileDamage: 10
   projectileSpeed: 7.5
-  projectileLife: 3
+  projectileLife: 10
   ThrowPos: {fileID: 1855287583}

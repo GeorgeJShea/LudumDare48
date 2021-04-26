@@ -221,13 +221,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartHealth: 100
+  isDead: 0
   rend: {fileID: 8343408306663701675}
   isPlayerClose: 0
   anim: {fileID: 8343408306663701685}
   CactiProjectile: {fileID: 3769123169295437976, guid: 9e0cef4a7bf564a41a82c3640abd7238, type: 3}
   projectileDamage: 10
   projectileSpeed: 10
-  projectileLife: 3
+  projectileLife: 10
   ThrowPos: {fileID: 6321000192738310922}
 --- !u!1 &8343408306663701684
 GameObject:
