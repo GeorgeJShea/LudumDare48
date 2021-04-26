@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Character
 {
@@ -14,6 +15,8 @@ public class Player : Character
 
     public AudioClip[] StepSounds;
     public AudioClip DeathSound;
+
+    public Image Healthbar;
 
     [HideInInspector] public Rigidbody2D rb;
 
@@ -56,6 +59,8 @@ public class Player : Character
     private void Update()
     {
         if (isDead) return;
+
+        Healthbar.fillAmount = health / StartHealth;
 
         //anim.SetFloat("X", rb.velocity.x);
         Vector3 mouseDir = CameraController.instance.cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;

@@ -30,6 +30,8 @@ public class UiGun : MonoBehaviour
     }
     public void Update()
     {
+        ticker.transform.position = Input.mousePosition;
+
         if (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
@@ -37,7 +39,7 @@ public class UiGun : MonoBehaviour
         }
         else
         {
-            ticker.fillAmount = 1;
+            ticker.fillAmount = 0;
             timeLeft = 0;
         }
     }
