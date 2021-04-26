@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855287582}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.75, y: 0.25, z: 0}
+  m_LocalPosition: {x: 0.375, y: 0.125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8644931162984618142}
@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8644931162984618114}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8644931164345547568}
@@ -155,7 +155,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -163,19 +163,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.70788926, y: 0.3011182}
-      - {x: 0.5140115, y: 0.4318388}
-      - {x: 0.5625, y: 1}
-      - {x: -0.3125, y: 1}
-      - {x: -0.63371766, y: 0.5843663}
-      - {x: -0.6882828, y: 0.3870982}
-      - {x: -1, y: 0.125}
-      - {x: -1.0087175, y: -0.36199617}
-      - {x: -0.4857118, y: -0.39605922}
-      - {x: -0.4942366, y: -1}
-      - {x: 0.5552595, y: -1.0087175}
-      - {x: 0.5, y: -0.1875}
-      - {x: 0.8125, y: -0.125}
+    - - {x: 0.35, y: 0}
+      - {x: 0.225, y: 0.5}
+      - {x: -0.225, y: 0.5}
+      - {x: -0.3, y: 0}
+      - {x: -0.15, y: -0.5}
+      - {x: 0.15, y: -0.5}
 --- !u!114 &8644931162984618143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963f8ecc8b6c3594b85233f143b9c058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SorterPositionOffset: {x: 0, y: -1, z: 0}
+  SorterPositionOffset: {x: 0, y: -0.5, z: 0}
   isMovable: 1
   renderers:
   - {fileID: 8644931162984618141}
@@ -407,7 +400,7 @@ MonoBehaviour:
   isPlayerClose: 0
   anim: {fileID: 8644931162984618115}
   isAttacking: 0
-  GraphicsOffset: {x: 0, y: 1}
+  GraphicsOffset: {x: 0, y: 0.5}
   DropWhenDead: {fileID: 1711876080656016681, guid: 156306546c98ebb4086a28b3471e808b, type: 3}
   DeathSounds:
   - {fileID: 8300000, guid: 4fc4e0e16cd2a8141aa9a085a43e00f5, type: 3}

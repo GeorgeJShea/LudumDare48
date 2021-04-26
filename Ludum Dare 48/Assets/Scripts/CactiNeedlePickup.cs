@@ -21,7 +21,7 @@ public class CactiNeedlePickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player.instance.PickupShotgunAmmo(Random.Range(Amount.x, Amount.y));
+        Player.instance.PickupShotgunAmmo((int)Random.Range(Amount.x, Amount.y));
         GetComponent<GunDropAni>().pickWeapon();
         Destroy(gameObject);
     }
