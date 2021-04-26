@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 212872419577953495}
   - component: {fileID: 212872419577953488}
   - component: {fileID: 212872419577953491}
+  - component: {fileID: -1056749844272222662}
   m_Layer: 15
   m_Name: Destrucble
   m_TagString: Untagged
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -104,7 +105,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 2, y: 2}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -124,10 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1938e94c346729d46ba11fad8a615fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 212872419577953494}
-  Sprites:
-  - {fileID: 21300000, guid: fa49edbad974b9d46921c4cc459e1d0d, type: 3}
-  - {fileID: 21300000, guid: f2ae6a2cb9791474394b6e6e02cff9f6, type: 3}
   ToSpawn:
   - {fileID: 1880006526629471268, guid: bcc7cb16abf28d848a6b7916f50f158b, type: 3}
   - {fileID: 1711876080656016681, guid: 156306546c98ebb4086a28b3471e808b, type: 3}
@@ -148,3 +145,22 @@ MonoBehaviour:
   isMovable: 0
   renderers:
   - {fileID: 212872419577953494}
+--- !u!95 &-1056749844272222662
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212872419577953492}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 66102a6ad14cc474db2da97dc7941bc4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
