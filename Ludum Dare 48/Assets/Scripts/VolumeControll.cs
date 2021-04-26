@@ -9,8 +9,13 @@ public class VolumeControll : MonoBehaviour
     public Slider slider;
     public AudioMixer audioMixer;
 
-    public void setVolume(float volume)
+    public void setMusicVolume(float volume)
     {
-        audioMixer.SetFloat("Volume", volume);
+        audioMixer.SetFloat("MusicVol", volume);
+    }
+
+    public void setSFXVolume(float volume)
+    {
+        audioMixer.SetFloat("SFXVol", volume);
     }
 }

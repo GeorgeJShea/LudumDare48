@@ -5040,7 +5040,7 @@ MonoBehaviour:
   uiComponent: {fileID: 0}
   audioSource: {fileID: 2551172565349711698}
   FlamethrowerStart: {fileID: 8300000, guid: a75401016e00d9a4f89b2c196cabb0b2, type: 3}
-  FlamethrowerEnd: {fileID: 0}
+  FlamethrowerEnd: {fileID: 8300000, guid: 0daf01a710163a0459846f78c4c3fcba, type: 3}
 --- !u!114 &4435442453850855442
 MonoBehaviour:
   m_ObjectHideFlags: 0
