@@ -69,6 +69,7 @@ public class AdvGunLogic : Item
 
     public AudioClip[] ReloadSounds;
     public AudioClip[] ShootSounds;
+    public AudioClip[] ClickSounds;
 
     public BulletPooling BulletPool;
 
@@ -105,6 +106,14 @@ public class AdvGunLogic : Item
         {
             // sets ui
             uiComponent.ammoClipSet(clip, ammoPool);
+
+            if (Input.GetMouseButtonDown(0) && clip - costToShoot <= 0)
+            {
+                if (ClickSounds.Length > 0)
+                {
+                    SoundManager.instance.PlaySound(ClickSounds[Random.Range(0, ClickSounds.Length)], transform.position, 1);
+                }
+            }
 
             if (isSemi ? Input.GetKeyDown(KeyCode.Mouse0) : Input.GetKey(KeyCode.Mouse0) && clip - costToShoot >= 0)
             {
@@ -208,7 +217,7 @@ public class AdvGunLogic : Item
 
         CameraController.instance.MouseDirOverride -= CameraShootImpact;
 
-        Destroy(Instantiate(muzzleFlash, transform.GetChild(0).transform.position, Quaternion.identity), 1);
+        Destroy(Instantiate(muzzleFlash, transform.GetChild(0).transform.position, transform.GetChild(0).transform.rotation), 1);
     }
 
     /*  Summary:

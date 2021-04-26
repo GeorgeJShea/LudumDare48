@@ -5032,7 +5032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a86a0b449118ff54a93b68a1154da2cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoPool: 100
+  ammoPool: 0
   Trigger: {fileID: 1534701851}
   damage: 100
   light: {fileID: 8351076142222621936}
@@ -5041,6 +5041,11 @@ MonoBehaviour:
   audioSource: {fileID: 2551172565349711698}
   FlamethrowerStart: {fileID: 8300000, guid: a75401016e00d9a4f89b2c196cabb0b2, type: 3}
   FlamethrowerEnd: {fileID: 8300000, guid: 15d4eaa46a2d5054cb00ed7aa589e795, type: 3}
+  ClickSounds:
+  - {fileID: 8300000, guid: 0dd7bb59a0f9207418598892ae0ada32, type: 3}
+  - {fileID: 8300000, guid: ffb874720dc15314db8a28022020711f, type: 3}
+  - {fileID: 8300000, guid: 05a719e4dbeb90d4e9e26d00bc8ecab5, type: 3}
+  - {fileID: 8300000, guid: 75831b8ffc8aae044bcc51027f8d78a8, type: 3}
 --- !u!114 &4435442453850855442
 MonoBehaviour:
   m_ObjectHideFlags: 0

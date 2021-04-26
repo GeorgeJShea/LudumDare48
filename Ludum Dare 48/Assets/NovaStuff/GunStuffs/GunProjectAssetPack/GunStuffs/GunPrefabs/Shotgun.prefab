@@ -177,7 +177,7 @@ MonoBehaviour:
   costToShoot: 1
   clip: 4
   clipSize: 4
-  ammoPool: 25
+  ammoPool: 4
   muzzleFlash: {fileID: 1112699458390963645, guid: 88fc8c9b16231cd4182ef4fe1c337896, type: 3}
   bullets: 15
   deviation: 10
@@ -191,6 +191,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 391e7b5017f897b4ea3fb812391c5ee0, type: 3}
   - {fileID: 8300000, guid: 0dcd997b53e3b2e46bf44bb7d4d72ac9, type: 3}
   - {fileID: 8300000, guid: 0aa0e89e8c0e1bf41b39b9007aba8b44, type: 3}
+  ClickSounds:
+  - {fileID: 8300000, guid: 0dd7bb59a0f9207418598892ae0ada32, type: 3}
+  - {fileID: 8300000, guid: ffb874720dc15314db8a28022020711f, type: 3}
+  - {fileID: 8300000, guid: 05a719e4dbeb90d4e9e26d00bc8ecab5, type: 3}
+  - {fileID: 8300000, guid: 75831b8ffc8aae044bcc51027f8d78a8, type: 3}
   BulletPool: {fileID: 94525900688886087}
   damage: 10
   speed: 14

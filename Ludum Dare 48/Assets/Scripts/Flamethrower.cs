@@ -27,8 +27,12 @@ public class Flamethrower : Item
     public AudioClip FlamethrowerStart;
     public AudioClip FlamethrowerEnd;
 
+    public AudioClip[] ClickSounds;
+
     private float initialLightIntensity;
     private float lastLightIntesity;
+
+    private bool wasShooting;
 
     void Start()
     {
@@ -43,21 +47,38 @@ public class Flamethrower : Item
 
         if (Input.GetMouseButtonDown(0))
         {
-            FlameEffect.Play();
-            light.enabled = true;
-            startedTime = Time.time;
-            lastLightIntesity = light.intensity;
+            if (ammoPool <= 0)
+            {
+                if (ClickSounds.Length > 0)
+                {
+                    SoundManager.instance.PlaySound(ClickSounds[Random.Range(0, ClickSounds.Length)], transform.position, 1);
+                }
+            }
+            else
+            {
+                FlameEffect.Play();
+                light.enabled = true;
+                startedTime = Time.time;
+                lastLightIntesity = light.intensity;
 
-            if (FlamethrowerStart) SoundManager.instance.PlaySound(FlamethrowerStart, transform.position, 1);
-            audioSource.Play();
+                if (FlamethrowerStart) SoundManager.instance.PlaySound(FlamethrowerStart, transform.position, 1);
+                audioSource.Play();
+
+                wasShooting = true;
+            }
         }
         if (Input.GetMouseButtonUp(0) || ammoPool <= 0)
         {
-            FlameEffect.Stop();
-            startedTime = Time.time;
+            if (wasShooting)
+            {
+                FlameEffect.Stop();
+                startedTime = Time.time;
 
-            if (FlamethrowerEnd) SoundManager.instance.PlaySound(FlamethrowerEnd, transform.position, 1);
-            audioSource.Stop();
+                if (FlamethrowerEnd) SoundManager.instance.PlaySound(FlamethrowerEnd, transform.position, 1);
+                audioSource.Stop();
+
+                wasShooting = false;
+            }
         }
 
         if (Input.GetMouseButton(0) && ammoPool > 0)
