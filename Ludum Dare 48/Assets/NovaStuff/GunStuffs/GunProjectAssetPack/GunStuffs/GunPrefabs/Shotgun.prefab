@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 2042660509755404609}
+  AngleOffset: 0
 --- !u!61 &2042660509755404610
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -179,8 +180,10 @@ MonoBehaviour:
   ammoPool: 25
   muzzleFlash: {fileID: 1112699458390963645, guid: 88fc8c9b16231cd4182ef4fe1c337896, type: 3}
   bullets: 15
-  deviation: 15
-  lagTime: 0.01
+  deviation: 10
+  CameraShootImpact: 2
+  ShootAngleOffset: 50
+  lagTime: 0
   ReloadSounds:
   - {fileID: 8300000, guid: 7158a3bb681c8674c9c31ec416517d85, type: 3}
   ShootSounds:
@@ -189,7 +192,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0dcd997b53e3b2e46bf44bb7d4d72ac9, type: 3}
   - {fileID: 8300000, guid: 0aa0e89e8c0e1bf41b39b9007aba8b44, type: 3}
   BulletPool: {fileID: 94525900688886087}
-  damage: 5
+  damage: 10
   speed: 14
   bulletLife: 5
   isSemi: 0

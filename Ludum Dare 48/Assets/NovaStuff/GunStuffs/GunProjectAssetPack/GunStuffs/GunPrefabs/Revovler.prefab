@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 7912532995229287874}
+  AngleOffset: 0
 --- !u!61 &7912532995229287879
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -180,6 +181,8 @@ MonoBehaviour:
   muzzleFlash: {fileID: 1112699458390963645, guid: 88fc8c9b16231cd4182ef4fe1c337896, type: 3}
   bullets: 1
   deviation: 2
+  CameraShootImpact: 0.5
+  ShootAngleOffset: 50
   lagTime: 0.1
   ReloadSounds:
   - {fileID: 8300000, guid: c60526724a4ee444eb4c405882518ad6, type: 3}

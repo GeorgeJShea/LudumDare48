@@ -54,6 +54,9 @@ public class AdvGunLogic : Item
     [Tooltip("Amount bullets will spread")]
     public float deviation;
 
+    public float CameraShootImpact;
+    public float ShootAngleOffset;
+
 
     [Tooltip("Time inbetween bursted bullets")]
     public float lagTime;
@@ -80,12 +83,16 @@ public class AdvGunLogic : Item
     [HideInInspector]
     public UiGun uiComponent;    //Makes refrence to ui script
 
+    private GunRotation rotation;
+
     void Start()
     {
         //Gun setup
         triggerDelayReset = triggerDelay;
         bulletsReset = bullets;
         lagTimeReset = lagTime;
+
+        rotation = GetComponent<GunRotation>();
 
         uiComponent = GameObject.Find("UiManger").GetComponent<UiGun>();
         hands = GameObject.Find("hands");
@@ -145,7 +152,7 @@ public class AdvGunLogic : Item
             toFast = false;
         }
 
-        Vector3 mouseDir = CameraController.instance.cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 mouseDir = CameraController.instance.cam.ScreenToWorldPoint(Input.mousePosition) - new Vector3(transform.position.x, transform.parent.position.y);
         float angle = Mathf.Atan2(mouseDir.y, mouseDir.x) * Mathf.Rad2Deg;
 
         angle = angle + Random.Range(-deviation, deviation);
@@ -196,6 +203,10 @@ public class AdvGunLogic : Item
         {
             SoundManager.instance.PlaySound(ShootSounds[Random.Range(0, ShootSounds.Length)], transform.position, 1);
         }
+
+        rotation.AngleOffset += ShootAngleOffset;
+
+        CameraController.instance.MouseDirOverride -= CameraShootImpact;
 
         Destroy(Instantiate(muzzleFlash, transform.GetChild(0).transform.position, Quaternion.identity), 1);
     }

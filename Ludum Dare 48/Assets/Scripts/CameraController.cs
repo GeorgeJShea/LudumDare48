@@ -9,6 +9,9 @@ public class CameraController : MonoBehaviour
     public Transform target;
     [HideInInspector] public Camera cam;
 
+    public float MouseDirOffset = 3;
+    public float MouseDirOverride = 3;
+
     public static CameraController instance;
 
     private void Awake()
@@ -26,10 +29,12 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
+        MouseDirOverride = Mathf.Lerp(MouseDirOverride, MouseDirOffset, 5 * Time.deltaTime);
+
         Vector3 nextPos = target.position;
         Vector3 mouseDir = cam.ScreenToWorldPoint(Input.mousePosition) - Player.instance.transform.position;
         mouseDir = mouseDir.normalized;
-        mouseDir *= 3;
+        mouseDir *= MouseDirOverride;
 
         nextPos += mouseDir;
 
