@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Beer : MonoBehaviour
 {
-    public float Amount;
+    public Vector2 Amount;
 
     private float SpawnTime;
 
@@ -21,7 +21,7 @@ public class Beer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player.instance.Heal(Amount);
+        Player.instance.Heal(Random.Range(Amount.x, Amount.y));
         GetComponent<GunDropAni>().pickWeapon();
         Destroy(gameObject);
     }
