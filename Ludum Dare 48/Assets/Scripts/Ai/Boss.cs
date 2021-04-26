@@ -86,6 +86,10 @@ public class Boss : Ai
             }
         }
     }
+    public override void MoveCharacter(Vector3 by)
+    {
+        
+    }
 
     public override void Die()
     {
