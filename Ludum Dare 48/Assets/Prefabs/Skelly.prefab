@@ -251,7 +251,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 12.5
 --- !u!114 &8644931163742508374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,7 +402,7 @@ MonoBehaviour:
   PatrolArea: {fileID: 0}
   WaitTimer: {x: 1, y: 2}
   CurrentWaypoint: {fileID: 0}
-  AttackRange: 6
+  AttackRange: 8
   AttackDamage: 5
   isPlayerClose: 0
   anim: {fileID: 8644931162984618115}

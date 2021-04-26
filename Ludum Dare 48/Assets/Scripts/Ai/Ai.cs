@@ -42,23 +42,20 @@ public class Ai : Character
     public override void Die()
     {
         if (isDead) return;
-        StartCoroutine(IDie());
-        //transform.position = LevelManager.instance.SpawnPoint.position;
-        //health = StartHealth;
-        //gameObject.SetActive(false);
-    }
 
-    public IEnumerator IDie()
-    {
         isDead = true;
 
         anim.Play("Death", 0, 0);
 
         Destroy(Agent);
+        foreach (var c in GetComponentsInChildren<Collider2D>())
+        {
+            Destroy(c);
+        }
 
-        yield return new WaitForSeconds(2);
+        rend.material.SetFloat("_FlickerFade", 0);
 
-        Destroy(gameObject);
+        Destroy(this, 0.5f);
     }
 
     protected virtual void Update()

@@ -43,6 +43,20 @@ public class Cacti : Character
         base.Damage(damage);
     }
 
+    public override void Die()
+    {
+        if (isDead) return;
+
+        isDead = true;
+
+        anim.Play("Death", 0, 0);
+
+        foreach (var c in GetComponentsInChildren<Collider2D>())
+        {
+            Destroy(c);
+        }
+        Destroy(this, 0.5f);
+    }
     public override void MoveCharacter(Vector3 by)
     {
         //Do nothing

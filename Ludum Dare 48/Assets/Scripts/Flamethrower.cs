@@ -57,12 +57,19 @@ public class Flamethrower : Item
                 ammoPool -= Time.deltaTime;
                 for (int i = 0; i < Trigger.Enemies.Count; i++)
                 {
-                    if (!CheckWallBetween(Trigger.Enemies[i], transform.position))
+                    if (Trigger.Enemies[i])
                     {
-                        if (Trigger.Enemies[i])
+                        if (!CheckWallBetween(Trigger.Enemies[i], transform.position))
                         {
-                            Trigger.Enemies[i].Damage(damage * Time.deltaTime);
+                            if (Trigger.Enemies[i])
+                            {
+                                Trigger.Enemies[i].Damage(damage * Time.deltaTime);
+                            }
                         }
+                    }
+                    else
+                    {
+                        Trigger.Enemies.RemoveAt(i);
                     }
                 }
             }
