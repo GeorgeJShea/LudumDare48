@@ -410,7 +410,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 50bf06edb19511b4798e00b768d99ebd, type: 3}
   BoneProjectile: {fileID: 3769123169295437976, guid: 6af39740b3addf74fb93852394931369, type: 3}
   projectileDamage: 10
-  projectileSpeed: 7.5
+  projectileSpeed: 5
   projectileLife: 10
   ThrowBoneSounds:
   - {fileID: 8300000, guid: 9f71597e1140deb47ab9755b5b6c3582, type: 3}
