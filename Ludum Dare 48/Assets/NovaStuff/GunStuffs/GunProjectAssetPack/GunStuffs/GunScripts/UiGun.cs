@@ -13,7 +13,6 @@ using UnityEngine.UI;
 
 public class UiGun : MonoBehaviour
 {
-    public TextMeshProUGUI clipText;
     public TextMeshProUGUI ammoText;
 
 
@@ -44,11 +43,10 @@ public class UiGun : MonoBehaviour
     }
     public void ammoClipSet(float clip, float ammoPool)
     {
-        clipText.text = clip.ToString();
-        ammoText.text = ammoPool.ToString();
+        ammoText.text = clip.ToString() + "/" + (ammoPool > 999 ? "--" : ammoPool.ToString());
     }
 
-    public void ReloadAni (float reloadTimer)
+    public void ReloadAni(float reloadTimer)
     {
         timeLeft = reloadTimer;
         reloadTime = reloadTimer;
