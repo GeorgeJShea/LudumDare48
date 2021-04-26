@@ -12,6 +12,9 @@ public class LevelManager : MonoBehaviour
 
     public int currentLevel = 1;
 
+    public AudioSource MusicSource;
+    public AudioClip BossfightMusic;
+
     public static LevelManager instance;
 
     private void Awake()
@@ -44,6 +47,12 @@ public class LevelManager : MonoBehaviour
         Levels.Add(data);
 
         SpawnPoint = data.SpawnPoint;
+
+        if (data.isBossLevel)
+        {
+            MusicSource.clip = BossfightMusic;
+            MusicSource.Play();
+        }
 
         if (Levels.Count > 1)
         {

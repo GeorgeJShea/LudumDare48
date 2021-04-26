@@ -49,17 +49,16 @@ MonoBehaviour:
   isDead: 0
   rend: {fileID: 4474735151032411679}
   HitSounds:
-  - {fileID: 8300000, guid: afe55e7dbae8f5747bcfe57e950b20ec, type: 3}
-  - {fileID: 8300000, guid: 413ba016101f1874eb5137d6ad55637b, type: 3}
-  - {fileID: 8300000, guid: 6ac04c2558e522d4aa9009edebd3dc20, type: 3}
-  - {fileID: 8300000, guid: 021f113a23c2ae145810c843c4da40c1, type: 3}
+  - {fileID: 8300000, guid: 92cc89b8540cb104985ea1201984e517, type: 3}
+  - {fileID: 8300000, guid: 0487d404617f6db4193701968e6932a5, type: 3}
+  - {fileID: 8300000, guid: 2cf2ad88588e94a48bb529957ed19f86, type: 3}
   AiObjects: {fileID: 4474735151032411676}
   Agent: {fileID: 4474735149993800501}
   Movement: {fileID: 0}
   PatrolArea: {fileID: 0}
   WaitTimer: {x: 1, y: 2}
   CurrentWaypoint: {fileID: 0}
-  AttackRange: 5
+  AttackRange: 7.5
   AttackDamage: 5
   isPlayerClose: 0
   anim: {fileID: 4474735151032411649}
@@ -67,10 +66,7 @@ MonoBehaviour:
   GraphicsOffset: {x: 0, y: 0.5}
   DropWhenDead: {fileID: 0}
   DeathSounds:
-  - {fileID: 8300000, guid: 4fc4e0e16cd2a8141aa9a085a43e00f5, type: 3}
-  - {fileID: 8300000, guid: 5ba44c33e8b506f4589ee2a721b149e4, type: 3}
-  - {fileID: 8300000, guid: 685bb4330a3c481488ba9dca0f0ecd22, type: 3}
-  - {fileID: 8300000, guid: 50bf06edb19511b4798e00b768d99ebd, type: 3}
+  - {fileID: 8300000, guid: adef8491e3949e34c8dd2ac1a8435942, type: 3}
   ignorePlayerDistance: 0
   StoneProjectiles:
   - {fileID: 3769123169295437976, guid: cc0507abdc539f5419790bf3fe287f72, type: 3}

@@ -1172,7 +1172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987382854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3423824, y: 1.6933333, z: -5}
+  m_LocalPosition: {x: 2.0289955, y: 1.9985864, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1368,6 +1368,8 @@ MonoBehaviour:
   SpawnPoint: {fileID: 0}
   Levels: []
   currentLevel: 1
+  MusicSource: {fileID: 987382859}
+  BossfightMusic: {fileID: 8300000, guid: e465cc9c665c0044c892f8ec79c055eb, type: 3}
 --- !u!1001 &1123287302
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ public class LevelData : MonoBehaviour
     public Transform ExitPos;
     public Transform LevelContainer;
 
+    public bool isBossLevel;
+
     private void Awake()
     {
         foreach (var n in FindObjectsOfType<NavMeshAgent>())
