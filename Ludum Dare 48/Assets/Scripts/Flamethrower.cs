@@ -39,6 +39,8 @@ public class Flamethrower : Item
 
     public void Update()
     {
+        if (Time.timeScale == 0) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             FlameEffect.Play();
@@ -46,7 +48,7 @@ public class Flamethrower : Item
             startedTime = Time.time;
             lastLightIntesity = light.intensity;
 
-            if(FlamethrowerStart) SoundManager.instance.PlaySound(FlamethrowerStart, transform.position, 1);
+            if (FlamethrowerStart) SoundManager.instance.PlaySound(FlamethrowerStart, transform.position, 1);
             audioSource.Play();
         }
         if (Input.GetMouseButtonUp(0) || ammoPool <= 0)
