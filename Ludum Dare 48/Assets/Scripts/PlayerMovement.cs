@@ -7,9 +7,14 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     private Vector2 moveVelocity;
 
-    public bool freezeInput;
+    public bool freezeInput { get; set; }
 
     public float speed = 20.0f;
+
+    public float dashSpeed;
+    public float dashDistance;
+    public bool isDashing;
+    public Animator anim;
 
     void Start()
     {
@@ -24,6 +29,11 @@ public class PlayerMovement : MonoBehaviour
             float moveY = Input.GetAxisRaw("Vertical");
 
             moveVelocity = new Vector2(moveX, moveY).normalized;
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                StartCoroutine(IDoDash());
+            }
         }
     }
     private void FixedUpdate()
@@ -32,9 +42,41 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(moveVelocity.x * speed, moveVelocity.y * speed);
         }
-        else
+    }
+
+    public void FreezeInput()
+    {
+        freezeInput = true;
+        rb.velocity = Vector2.zero;
+    }
+
+    private IEnumerator IDoDash()
+    {
+        Vector2 startPos = transform.position;
+
+        isDashing = true;
+
+        anim.Play("Hurt");
+        freezeInput = true;
+
+        rb.velocity = rb.velocity.normalized * dashSpeed;
+
+        while (true)
         {
-            rb.velocity = Vector2.zero;
+            //anim.Play("Hurt");
+
+            anim.SetFloat("X", rb.velocity.normalized.x);
+
+            if (rb.velocity.magnitude < dashSpeed * 0.5f || Vector2.Distance(transform.position, startPos) >= dashDistance)
+            {
+                break;
+            }
+
+            rb.velocity = rb.velocity.normalized * dashSpeed;
+
+            yield return null;
         }
+        isDashing = false;
+        freezeInput = false;
     }
 }

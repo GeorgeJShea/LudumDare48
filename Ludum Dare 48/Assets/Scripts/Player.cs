@@ -88,7 +88,7 @@ public class Player : Character
 
         anim.Play("Death", 0, 0);
 
-        Movement.freezeInput = true;
+        Movement.FreezeInput();
         Hands.SetActive(false);
         WeaponsHolder.SetActive(false);
 
