@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnakeOil : MonoBehaviour
+public class CactiNeedlePickup : MonoBehaviour
 {
     public float Amount;
 
@@ -21,7 +21,7 @@ public class SnakeOil : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player.instance.PickupSnakeOil(Amount);
+        Player.instance.PickupShotgunAmmo(Amount);
         GetComponent<GunDropAni>().pickWeapon();
         Destroy(gameObject);
     }

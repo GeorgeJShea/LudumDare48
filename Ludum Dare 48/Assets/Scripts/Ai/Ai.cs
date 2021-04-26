@@ -23,6 +23,8 @@ public class Ai : Character
 
     public Vector2 GraphicsOffset;
 
+    public GameObject DropWhenDead;
+
     protected float playerRange = 6;
 
     public override void Awake()
@@ -54,6 +56,8 @@ public class Ai : Character
         }
 
         rend.material.SetFloat("_FlickerFade", 0);
+
+        if (DropWhenDead) Instantiate(DropWhenDead, Movement.position + (Vector3.up * 0.5f), Quaternion.identity);
 
         Destroy(this, 0.5f);
     }

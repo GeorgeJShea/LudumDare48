@@ -230,6 +230,7 @@ MonoBehaviour:
   projectileSpeed: 10
   projectileLife: 10
   ThrowPos: {fileID: 6321000192738310922}
+  DropWhenDead: {fileID: 5835906563326073935, guid: 11c6e442586eeb14e8fc4038d75bba9f, type: 3}
 --- !u!1 &8343408306663701684
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,11 +17,12 @@ public class GunDropAni : MonoBehaviour
     public bool droppedBool = true;
 
     private float currentHeight;
-    private GameObject drop;
+    [HideInInspector] public GameObject drop;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (!droppedBool) return;
         currentHeight = gameObject.transform.position.y;
         drop = Instantiate(dropShadow, new Vector3(transform.position.x, transform.position.y - dropShadowDistance, 0), Quaternion.identity);
     }
@@ -29,7 +30,7 @@ public class GunDropAni : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(droppedBool == true)
+        if (droppedBool == true)
         {
 
             float y = Mathf.PingPong(Time.time * speed, height) * 6 + currentHeight;

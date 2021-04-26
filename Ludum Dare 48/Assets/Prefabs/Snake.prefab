@@ -60,6 +60,7 @@ MonoBehaviour:
   anim: {fileID: 4741976769521792357}
   isAttacking: 0
   GraphicsOffset: {x: 0, y: 0.5}
+  DropWhenDead: {fileID: 1880006526629471268, guid: bcc7cb16abf28d848a6b7916f50f158b, type: 3}
   JumpSpeed: 5
   Move: 0
 --- !u!1 &4741976768227972817

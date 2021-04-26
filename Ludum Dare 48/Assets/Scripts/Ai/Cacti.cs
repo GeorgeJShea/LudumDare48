@@ -15,6 +15,8 @@ public class Cacti : Character
 
     public Transform ThrowPos;
 
+    public GameObject DropWhenDead;
+
     private bool isAttacking;
 
     private void Update()
@@ -55,6 +57,9 @@ public class Cacti : Character
         {
             Destroy(c);
         }
+
+        if (DropWhenDead) Instantiate(DropWhenDead, transform.position + (Vector3.up * 0.5f), Quaternion.identity);
+
         Destroy(this, 0.5f);
     }
     public override void MoveCharacter(Vector3 by)

@@ -68,7 +68,6 @@ public class AdvDropPick : MonoBehaviour
     public void Pick(GameObject item)
     {
         item.gameObject.GetComponent<GunDropAni>().pickWeapon();
-        item.gameObject.GetComponent<GunDropAni>().droppedBool = false;
 
         //Moves guns to hand and makes child of player
         item.transform.position = transform.position;
