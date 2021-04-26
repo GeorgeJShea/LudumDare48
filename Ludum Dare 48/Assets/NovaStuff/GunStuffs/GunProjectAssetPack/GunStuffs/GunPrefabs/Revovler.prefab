@@ -189,7 +189,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1b8bce09132f8b3458ebeb23d19e9686, type: 3}
   - {fileID: 8300000, guid: ee0b0693bb621ce4bac9d6df6f465d72, type: 3}
   BulletPool: {fileID: 510192862849099944}
-  damage: 20
+  damage: 25
   speed: 20
   bulletLife: 2
   isSemi: 1

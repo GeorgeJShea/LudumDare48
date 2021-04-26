@@ -145,8 +145,10 @@ public class AdvGunLogic : Item
             toFast = false;
         }
 
-        //Goes up to player and then goes down to hand
-        float angle = hands.transform.localEulerAngles.z + Random.Range(-deviation, deviation);
+        Vector3 mouseDir = CameraController.instance.cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float angle = Mathf.Atan2(mouseDir.y, mouseDir.x) * Mathf.Rad2Deg;
+
+        angle = angle + Random.Range(-deviation, deviation);
         // Sets the devation to this variable
         Quaternion bulletDev = Quaternion.Euler(new Vector3(0, 0, angle));
 
