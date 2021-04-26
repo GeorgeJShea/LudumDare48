@@ -56,9 +56,7 @@ MonoBehaviour:
   AiObjects: {fileID: 4741976769521792376}
   Agent: {fileID: 4741976768488415313}
   Movement: {fileID: 0}
-  PatrolArea: {fileID: 0}
   WaitTimer: {x: 1, y: 2}
-  CurrentWaypoint: {fileID: 0}
   AttackRange: 1
   AttackDamage: 5
   isPlayerClose: 0
@@ -71,6 +69,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5f7e3839919368d43a33eda73f58ef1d, type: 3}
   - {fileID: 8300000, guid: 853c0b80258afd346954f2a25acb411f, type: 3}
   - {fileID: 8300000, guid: b4ea792e591afba4ea55bba3b98fab3f, type: 3}
+  ignorePlayerDistance: 0
   JumpSpeed: 5
   Move: 0
   JumpSounds:
@@ -239,7 +238,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 15
 --- !u!114 &4741976768833173680
 MonoBehaviour:
   m_ObjectHideFlags: 0
