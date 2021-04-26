@@ -27,6 +27,8 @@ public class Projectile : MonoBehaviour
     public bool Rotate;
     public float RotationSpeed = 5;
 
+    public float MinSoundLifetime;
+
     [HideInInspector] public Vector3 MoveDir;
     private float bulletHeight;
     private float shotTime;
@@ -81,7 +83,7 @@ public class Projectile : MonoBehaviour
         }
         else
         {
-            if (ImpactSounds.Length > 0)
+            if (ImpactSounds.Length > 0 && (Time.time - shotTime) > MinSoundLifetime)
             {
                 SoundManager.instance.PlaySound(ImpactSounds[Random.Range(0, ImpactSounds.Length)], transform.position, 1);
             }
