@@ -59,8 +59,6 @@ public class AdvGunLogic : Item
 
 
     [Tooltip("Time inbetween bursted bullets")]
-    public float lagTime;
-    private float lagTimeReset;
     private bool toFast = true;     // used for shotguns to prevant to much particle spam
     //________________________________________________________________________
 
@@ -91,7 +89,6 @@ public class AdvGunLogic : Item
         //Gun setup
         triggerDelayReset = triggerDelay;
         bulletsReset = bullets;
-        lagTimeReset = lagTime;
 
         rotation = GetComponent<GunRotation>();
 
@@ -130,13 +127,9 @@ public class AdvGunLogic : Item
         }
 
         // Prevents bursting when not time.
-        if (bullets >= 0 && lagTime < 0 && burstBool == true)
+        if (bullets >= 0 && burstBool == true)
         {
             Burst();
-        }
-        else
-        {
-            lagTime -= Time.deltaTime;
         }
 
         //Reloads gun if less then required clip will fill with what remains
@@ -154,7 +147,7 @@ public class AdvGunLogic : Item
 
     public void Burst()
     {
-        if (lagTimeReset < .1 && toFast == true)
+        if (toFast == true)
         {
             Shoot();
 
@@ -177,13 +170,12 @@ public class AdvGunLogic : Item
         bul.GetComponent<Projectile>().bulletSet(damage, speed, bulletDev * Vector2.right, bulletLife, false, transform.root.gameObject, transform.localPosition.y);
 
         // Used to make sure that a ton of particles dont spawn
-        if (lagTimeReset >= .1 && toFast == true)
+        if (toFast == true)
         {
             Shoot();
         }
 
         //resets burst timer and removes bullet
-        lagTime = lagTimeReset;
         bullets -= 1;
 
         if (bullets == 0)
