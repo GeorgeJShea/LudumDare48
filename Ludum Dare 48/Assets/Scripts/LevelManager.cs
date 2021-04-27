@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -16,6 +17,8 @@ public class LevelManager : MonoBehaviour
     public AudioSource MusicSource;
     public AudioClip BossfightMusic;
     public AudioClip EndingMusic;
+
+    public AudioMixer Mixer;
 
     public Image FadeImage;
 
@@ -48,6 +51,10 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 0;
 
         float initialMusicVol = MusicSource.volume;
+
+        float mixerVol;
+        Mixer.GetFloat("SFXVol", out mixerVol);
+
         float timeStamp = Time.unscaledTime;
         float duration = 1f;
         while (Time.unscaledTime < timeStamp + duration)
@@ -55,7 +62,7 @@ public class LevelManager : MonoBehaviour
             float t = (Time.unscaledTime - timeStamp) / duration;
 
             MusicSource.volume = Mathf.Lerp(initialMusicVol, 0, t);
-
+            Mixer.SetFloat("SFXVol", Mathf.Lerp(mixerVol, 0, t));
             yield return null;
         }
 
@@ -80,6 +87,8 @@ public class LevelManager : MonoBehaviour
 
             yield return null;
         }
+
+        Mixer.SetFloat("SFXVol", mixerVol);
 
         SceneManager.LoadScene(0);
     }

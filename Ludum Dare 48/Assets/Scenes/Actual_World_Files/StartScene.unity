@@ -1172,7 +1172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987382854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15148838, y: 2.1811824, z: -5}
+  m_LocalPosition: {x: -0.1494983, y: 2.1642745, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1371,6 +1371,7 @@ MonoBehaviour:
   MusicSource: {fileID: 987382859}
   BossfightMusic: {fileID: 8300000, guid: e465cc9c665c0044c892f8ec79c055eb, type: 3}
   EndingMusic: {fileID: 8300000, guid: 3b7c752ecfe271e4abb31ada09a3196e, type: 3}
+  Mixer: {fileID: 24100000, guid: 14f4c3f2f27b1ab43a52d249af24a30f, type: 2}
   FadeImage: {fileID: 1486427059}
 --- !u!1001 &1123287302
 PrefabInstance:
