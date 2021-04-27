@@ -28,6 +28,8 @@ public class Transition : MonoBehaviour
             image.color = new Color(0, 0, 0, i);
             yield return null;
         }
+
+        yield return new WaitForSeconds(2f);
        
         SceneManager.LoadScene(1);
     }
