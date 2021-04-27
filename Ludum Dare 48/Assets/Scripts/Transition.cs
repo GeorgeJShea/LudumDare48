@@ -8,13 +8,12 @@ using System.Collections;
 public class Transition : MonoBehaviour
 {
     public GameObject screenFade;
-    public int nextLevel;
 
     public void Clicked()
     {
-        StartCoroutine(FadeImage(nextLevel));
+        StartCoroutine(FadeImage());
     }
-    public IEnumerator FadeImage(int nextSceneToLoad)
+    public IEnumerator FadeImage()
     {
         // Grabs fade object infront of camera. 
         GameObject screenFade = GameObject.Find("ScreenFade");
@@ -30,6 +29,6 @@ public class Transition : MonoBehaviour
             yield return null;
         }
        
-        SceneManager.LoadScene(nextSceneToLoad);
+        SceneManager.LoadScene(1);
     }
 }
