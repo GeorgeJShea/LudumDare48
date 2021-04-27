@@ -28,6 +28,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6219301875834344353, guid: 1118a6cfc4236f145b429c37f445e3d3, type: 3}
+      propertyPath: ImpactVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6219301875834344353, guid: 1118a6cfc4236f145b429c37f445e3d3, type: 3}
       propertyPath: MinSoundLifetime
       value: 0.2
       objectReference: {fileID: 0}
