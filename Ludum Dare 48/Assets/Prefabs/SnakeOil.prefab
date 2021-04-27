@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 759561fd48496824eac29ff845c06c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amount: {x: 1, y: 3}
+  Amount: {x: 0.5, y: 1.5}
   PickupSounds:
   - {fileID: 8300000, guid: 74c986b65a9cce240837da1f5070e706, type: 3}
   - {fileID: 8300000, guid: 13991624e7d1b5343848b802f5c8d77f, type: 3}
