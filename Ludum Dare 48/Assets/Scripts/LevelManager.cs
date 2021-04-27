@@ -89,6 +89,7 @@ public class LevelManager : MonoBehaviour
         }
 
         Mixer.SetFloat("SFXVol", mixerVol);
+        Time.timeScale = 1;
 
         SceneManager.LoadScene(0);
     }
